@@ -63,11 +63,17 @@
 
         
             
-        <div id="formConnexion">
-            <div class="titleListeVehicules">
-                <h1>Mes véhicules</h1>
+        <div class="main px-5 mx-5 " id="formConnexion">
+            <div class="titleListeVehicules mb-3 d-flex justify-content-between w-100">
+                <div>
+                    <h2>Mes véhicules</h2>
+
+                </div>
+                <div>
+                    <button class="btn btn-success" onclick="popup()">+ Ajout véhicule</button>
+                </div>
             </div>
-            <div class="d-flex container-flex">
+            <div class="row bg-white">
                 <!--<ul id="listeVehicules">
                     <li>
                         <div>
@@ -76,24 +82,37 @@
                     </li>
                 </ul>-->
 
-
-                <div class="vh d-flex flex-column text-center align-items-center p-2">
-                    <div class="logo h-25"> <i class="bi bi-car-front h3"></i> </div>
-                    <div class="logo h-25"><span class="h3">Citroen</span> <span class="h3 ml-3">DS4</span></div>
-                    <div class="d-grid immat w-75 h-25"> <div class="bg-primary"></div> <div> <span class="immatNumber">AB-123-YZ</span></div><div class="bg-primary"></div> </div>
-                    <div class="logo h-25"><span class="h5">Couleur</span><i class="bi bi-record-fill text-danger mx-2 h2"></i></div>
+                <div class="row bg-bl p-3 text-white text-center col-12 m-0 h5">
+                    <di class="col-2">Type de vehicules</di>
+                    <di class="col-2">Immatriculation</di>
+                    <di class="col-2">Marque</di>
+                    <di class="col-2">Modeel</di>
+                    <di class="col-2">Assureur</di>
+                    <di class="col-2">Contrat</di>
                 </div>
-                <div class="vh">
-
+                <div class="row m-0 text-center p-3 ">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
                 </div>
-                <div class="vh">
-
+                <div class="row p-3 m-0 text-center">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
                 </div>
-                <div class="vh">
-
-                </div>
-                <div class="vh">
-
+                <div class="row p-3 m-0 text-center">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
                 </div>
             </div>
         </div>
@@ -101,7 +120,73 @@
 
 
 
+
+
+        <div id="popup" class="popupContainer">
+            <div id="formAjoutVehicule" class="popup border rounded shadow">
+                <div class="titleAjoutVehicule d-flex justify-content-between">
+                    <div>
+                        <h1>AJOUT VEHICULE</h1>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-danger">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+                <form class="row">
+                    <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
+                        <label for="inputAjoutVehiculeToken">TokenVehicule</label>
+                        <input id="inputAjoutVehiculeToken" type="text" class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeMarque">Marque</label>
+                        <input id="inputAjoutVehiculeMarque" type="text" disabled class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeModele">Modele</label>
+                        <input id="inputAjoutVehiculeModele" type="text" disabled class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
+                        <input id="inputAjoutVehiculePlaque" type="text" disabled class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNomAssureur">Nom de l'assureur</label>
+                        <input id="inputAjoutVehiculeNomAssureur" type="text" class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNumeroContrat">Numéro de contrat</label>
+                        <input id="inputAjoutVehiculeNumeroContrat" type="text" class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNumeroCarteVerte">Numéro de carte verte</label>
+                        <input id="inputAjoutVehiculeNumeroCarteVerte" type="text" class="form-control ">
+                    </div>
+    
+                    <div class="formAjoutVehiculeInput form-group col-5 my-3 p-2">
+                        <label for="inputAjoutVehiculePermis">Permis de conduire associé :</label>
+                        <select name="permis" id="inputAjoutVehiculePermis" class="form-control ">
+                            <option value="">Sélectionner un permis</option>
+                        </select>
+                    </div>
+    
+                    <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
+                        <button type="button" class="btn btn-primary">Ajouter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
   </section>
+
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
@@ -124,6 +209,10 @@
    }else {
      closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
    }
+  }
+
+  function popup(){
+
   }
   </script>
   </body>
