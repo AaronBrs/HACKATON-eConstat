@@ -11,38 +11,32 @@
             </div>
             <form>
                 <div class="formAjoutVehiculeInput">
-                    <label for="inputAjoutVehiculeToken">TokenVehicule</label>
-                    <input id="inputAjoutVehiculeToken" type="text">
+                    <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
+                    <input name="plaque" id="inputAjoutVehiculePlaque" type="text">
                 </div>
-
                 <div class="formAjoutVehiculeInput">
                     <label for="inputAjoutVehiculeMarque">Marque</label>
-                    <input id="inputAjoutVehiculeMarque" type="text" disabled>
+                    <input name="marque" id="inputAjoutVehiculeMarque" type="text" disabled>
                 </div>
 
                 <div class="formAjoutVehiculeInput">
                     <label for="inputAjoutVehiculeModele">Modele</label>
-                    <input id="inputAjoutVehiculeModele" type="text" disabled>
-                </div>
-
-                <div class="formAjoutVehiculeInput">
-                    <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
-                    <input id="inputAjoutVehiculePlaque" type="text" disabled>
+                    <input name="modele" id="inputAjoutVehiculeModele" type="text" disabled>
                 </div>
 
                 <div class="formAjoutVehiculeInput">
                     <label for="inputAjoutVehiculeNomAssureur">Nom de l'assureur</label>
-                    <input id="inputAjoutVehiculeNomAssureur" type="text">
+                    <input name="nomAssureur" id="inputAjoutVehiculeNomAssureur" type="text">
                 </div>
 
                 <div class="formAjoutVehiculeInput">
                     <label for="inputAjoutVehiculeNumeroContrat">Numéro de contrat</label>
-                    <input id="inputAjoutVehiculeNumeroContrat" type="text">
+                    <input name="numeroContrat" id="inputAjoutVehiculeNumeroContrat" type="text">
                 </div>
 
                 <div class="formAjoutVehiculeInput">
                     <label for="inputAjoutVehiculeNumeroCarteVerte">Numéro de carte verte</label>
-                    <input id="inputAjoutVehiculeNumeroCarteVerte" type="text">
+                    <input name="numeroCarteVerte" id="inputAjoutVehiculeNumeroCarteVerte" type="text">
                 </div>
 
                 <div class="formAjoutVehiculeInput">
@@ -53,9 +47,12 @@
                 </div>
 
                 <div class="formAjoutVehiculeBouton">
-                    <button type="button">Ajouter</button>
+                    <a><button type="submit">Ajouter</button></a>
                 </div>
             </form>
+            <a href="listeVehicules.html"><button>Retour</button></a>
+            <button onclick="chargerInfosAjoutVehicule()">Charger infos</button>
+
         </div>
     </body>
     <script src="js/script.js"></script>
