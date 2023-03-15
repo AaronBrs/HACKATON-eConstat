@@ -1,31 +1,17 @@
-//
-const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345"};
-const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+//------------------------------------------------------------------------------------------
+const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"MAIF", numContratAssocie:"55667788", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"99775533", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
 //------------------------------------------------------------------------------------------
 const permis1 = {numeroPermis:"123456789", categorie:"Permis A", dateValidite:"12-02-2031"};
 const permis2 = {numeroPermis:"987654321", categorie:"Permis B", dateValidite:"21-07-2028"};
 //------------------------------------------------------------------------------------------
-const mesVoitures = new Array()
-mesVoitures.push(voiture1)
-mesVoitures.push(voiture2)
-mesVoitures.push(voiture3)
-mesVoitures.push(voiture4)
-mesVoitures.push(voiture5)
-mesVoitures.push(voiture6)
+const mesVoitures = new Array(voiture1, voiture2, voiture3, voiture4, voiture5, voiture6)
 //------------------------------------------------------------------------------------------
-const mesPermis = new Array()
-mesPermis.push(permis1)
-mesPermis.push(permis2)
+const mesPermis = new Array(permis1, permis2)
 //------------------------------------------------------------------------------------------
 
 
@@ -65,10 +51,6 @@ function checkPresenceVehicule(){
 
 function chargerPermis(){
     var selectPermis = document.getElementById("inputAjoutVehiculePermis");
-    console.log(selectPermis)
-    console.log(mesPermis)
-    console.log(mesPermis.length)
-    console.log(mesPermis.at(1))
     for(var i = 0; i < mesPermis.length; i++){
         var permis = mesPermis.at(i);
         selectPermis.options.add(new Option(permis.categorie+" - "+permis.numeroPermis, i));
@@ -99,6 +81,25 @@ function afficherVehicules(){
                     +'</div>';
     })
 }
+function chargerInfos(){
+    var valueInputPlaque = document.getElementById("inputAjoutVehiculePlaque").value;
+    var trouve = false;
+    var maVoiture
+    mesVoitures.forEach((voiture)=>{
+        if (voiture.immat==valueInputPlaque){
+            trouve=true;
+            maVoiture = voiture;
+        }
+    })
+    if(!trouve){
+        window.alert("Erreur : Véhicule introuvable !")
+    }
+    document.getElementById("inputAjoutVehiculeMarque").value = maVoiture.marque;
+    document.getElementById("inputAjoutVehiculeModele").value=maVoiture.modele;
+    document.getElementById("inputAjoutVehiculeNomAssureur").value=maVoiture.nomAssureur;
+    document.getElementById("inputAjoutVehiculeNumeroContrat").value=maVoiture.numContratAssocie;
+    document.getElementById("inputAjoutVehiculeNumeroCarteVerte").value=maVoiture.numCarteVerte;
+}
 if(document.getElementById("inputAjoutVehiculePermis")!=null){
     console.log("AjoutVehicule")
     chargerPermis();
@@ -110,4 +111,24 @@ if(document.getElementById("inputChoixVehicule")!=null){
 if(document.getElementById("listeVehicules")!=null){
     console.log("ListeVehicule")
     afficherVehicules()
+}
+function chargerInfosAjoutVehicule(){
+    var valueInputPlaque = document.getElementById("inputAjoutVehiculePlaque").value;
+    console.log(valueInputPlaque)
+    //valueInputPlaque="";
+    var token="65f2e271752f";
+    fetch("http://api.apiplaqueimmatriculation.com/carte-grise?host_name=apiplaqueimmatriculation.com&immatriculation="+valueInputPlaque+"&token="+token+"&format=json",
+        {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+        .then(response => response.json())
+        .then(response => {
+            console.log(JSON.stringify(response))
+            document.getElementById("inputAjoutVehiculeMarque").value = response.data.marque;
+            document.getElementById("inputAjoutVehiculeModele").value = response.data.modele;
+        });
 }
