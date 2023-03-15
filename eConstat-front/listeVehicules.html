@@ -47,7 +47,6 @@
   </div>
   <section class="home-section">
 
-
         <div class="top d-flex align-items-center">
             <div class="Bonjour ps-3">
                 <span class="h1 p-2 m-0">Bonjour Omar</span>
@@ -60,68 +59,27 @@
             </div>
         </div>
 
-
-
-
         <div class="main px-5 mx-5 " id="formConnexion">
             <div class="titleListeVehicules mb-3 d-flex justify-content-between w-100">
                 <div>
                     <h2>Mes véhicules</h2>
-
                 </div>
                 <div>
                     <button class="btn btn-success" onclick="popup()">+ Ajout véhicule</button>
                 </div>
             </div>
-            <div class="row bg-white" id ="listeVehicules">
-                <!--<ul id="listeVehicules">
-                    <li>
-                        <div>
-                            <button>+ Ajout véhicule</button>
-                        </div>
-                    </li>
-                </ul>-->
-
+            <div class="row bg-white" id="listeVehicules">
                 <div class="row bg-bl p-3 text-white text-center col-12 m-0 h5">
-                    <div class="col-2">Type de vehicules</div>
+                    <div class="col-2">Type de vehicule</div>
                     <div class="col-2">Immatriculation</div>
                     <div class="col-2">Marque</div>
-                    <div class="col-2">Modeel</div>
+                    <div class="col-2">Modele</div>
                     <div class="col-2">Assureur</div>
                     <div class="col-2">Contrat</div>
                 </div>
-                <div class="row m-0 text-center p-3 ">
-                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
-                    <di class="col-2">AB-123-YZ</di>
-                    <di class="col-2">Citroen</di>
-                    <di class="col-2">DS4</di>
-                    <di class="col-2">AXA Auto</di>
-                    <di class="col-2">122SDE17446</di>
-                </div>
-                <div class="row p-3 m-0 text-center">
-                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
-                    <di class="col-2">AB-123-YZ</di>
-                    <di class="col-2">Citroen</di>
-                    <di class="col-2">DS4</di>
-                    <di class="col-2">AXA Auto</di>
-                    <di class="col-2">122SDE17446</di>
-                </div>
-                <div class="row p-3 m-0 text-center">
-                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
-                    <di class="col-2">AB-123-YZ</di>
-                    <di class="col-2">Citroen</di>
-                    <di class="col-2">DS4</di>
-                    <di class="col-2">AXA Auto</di>
-                    <di class="col-2">122SDE17446</di>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
         <div id="popup" class="popupContainer d-none">
             <div id="formAjoutVehicule" class="popup border rounded shadow">
                 <div class="titleAjoutVehicule d-flex justify-content-between">
@@ -136,23 +94,18 @@
                 </div>
                 <form class="row">
                     <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
-                        <label for="inputAjoutVehiculeToken">TokenVehicule</label>
-                        <input id="inputAjoutVehiculeToken" type="text" class="form-control ">
+                        <label for="inputAjoutVehiculePlaque">Immatriculation</label>
+                        <input id="inputAjoutVehiculePlaque" type="text" class="form-control ">
                     </div>
 
-                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                    <div class="formAjoutVehiculeInput form-group col-6 my-3 p-2">
                         <label for="inputAjoutVehiculeMarque">Marque</label>
-                        <input id="inputAjoutVehiculeMarque" type="text" disabled class="form-control ">
+                        <input id="inputAjoutVehiculeMarque" type="text" class="form-control ">
                     </div>
 
-                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                    <div class="formAjoutVehiculeInput form-group col-6 my-3 p-2">
                         <label for="inputAjoutVehiculeModele">Modele</label>
-                        <input id="inputAjoutVehiculeModele" type="text" disabled class="form-control ">
-                    </div>
-
-                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                        <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
-                        <input id="inputAjoutVehiculePlaque" type="text" disabled class="form-control ">
+                        <input id="inputAjoutVehiculeModele" type="text" class="form-control ">
                     </div>
 
                     <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
@@ -176,48 +129,47 @@
                             <option value="">Sélectionner un permis</option>
                         </select>
                     </div>
-
                     <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
                         <button type="button" class="btn btn-primary">Ajouter</button>
                     </div>
                 </form>
+                <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
+                    <button onclick="chargerInfosAjoutVehicule()" type="button" class="btn btn-primary">Charger infos</button>
+                </div>
             </div>
         </div>
-
-
   </section>
-
-  <script src="js/script.js"></script>
-  <script>
-  let sidebar = document.querySelector(".sidebar");
-  let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
-
-  closeBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("open");
-    menuBtnChange();//calling the function(optional)
-  });
-
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
-  });
-
-  // following are the code to change sidebar button(optional)
-  function menuBtnChange() {
-   if(sidebar.classList.contains("open")){
-     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-   }else {
-     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-   }
-  }
-
-  function popup(){
-    document.getElementById('popup').classList.remove('d-none')
-  }
-  function hidepopup(){
-    document.getElementById('popup').classList.add('d-none')
-  }
-  </script>
   </body>
+    <script src="js/script.js"></script>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if(sidebar.classList.contains("open")){
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            }else {
+                closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+            }
+        }
+
+        function popup(){
+            document.getElementById('popup').classList.remove('d-none')
+        }
+        function hidepopup(){
+            document.getElementById('popup').classList.add('d-none')
+        }
+    </script>
 </html>

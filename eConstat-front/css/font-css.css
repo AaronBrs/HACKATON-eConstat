@@ -358,7 +358,7 @@
     background-color: #eee;
   }
 
-  input[type="text"],input[type="email"]{
+  input[type="text"],input[type="email"],input[type="tel"]{
     background-color: #f1f3f8;
   }
 

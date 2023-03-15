@@ -1,0 +1,177 @@
+<html>
+<head>
+    <title>eConstat | Constat</title>
+    <meta charset="utf-8" />
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="formConstat">
+    <div class="titleConstat">
+        <h1>Constat</h1>
+    </div>
+    <form>
+        <!------------------------------------------------------------------------------------>
+        <h2>Divers</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatDate">Date de l'accident</label>
+            <input name="date" id="inputConstatDate" type="date">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatHeure">Heure de l'accident</label>
+            <input name="heure" id="inputConstatHeure" type="time">
+        </div>
+        <div class="formConstatInput">
+            <p>Blessés même légers<p>
+            <input required id="inputConstatDegatsHumainsOui" name="blesses" value="oui" type="radio">
+            <label for="inputConstatDegatsHumainsOui">Oui</label>
+            <input required id="inputConstatDegatsHumainsNon" name="blesses" value="non" type="radio">
+            <label for="inputConstatDegatsHumainsNon">Non</label>
+        </div>
+        <div class="formConstatInput">
+            <p>Dégats matériels à d'autres véhicules que ceux du constat</p>
+            <input id="inputConstatDegatsAutresVehiculesOui" name="autresvehicules" value="oui" type="radio">
+            <label for="inputConstatDegatsAutresVehiculesOui">Oui</label>
+            <input id="inputConstatDegatsAutresVehiculesNon" name="autresvehicules" value="non" type="radio">
+            <label for="inputConstatDegatsAutresVehiculesNon">Non</label>
+        </div>
+        <div class="formConstatInput">
+            <p>Dégats matériels à des objets autres que des véhicules</p>
+            <input id="inputConstatDegatsAutresOui" name="autres" value="oui" type="radio">
+            <label for="inputConstatDegatsAutresOui">Oui</label>
+            <input id="inputConstatDegatsAutresNon" name="autres" value="non" type="radio">
+            <label for="inputConstatDegatsAutresNon">Non</label>
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <h2>Informations conducteur A</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatNomConducteurA">Nom</label>
+            <input name="nomConducteurA" id="inputConstatNomConducteurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatPrenomConducteurA">Prenom</label>
+            <input name="prenomConducteurA" id="inputConstatPrenomConducteurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatDateNaissanceConducteurA">Date de naissance</label>
+            <input name="dateNaissanceConducteurA" id="inputConstatDateNaissanceConducteurA" type="date">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatAdresseConducteurA">Adresse</label>
+            <input name="adresseConducteurA" id="inputConstatAdresseConducteurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatCodePostalConducteurA">Code postal</label>
+            <input name="codePostalConducteurA" id="inputConstatCodePostalConducteurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatPaysConducteurA">Pays</label>
+            <input name="paysConducteurA" id="inputConstatPaysConducteurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatNumeroTelephoneConducteurA">N°Téléphone</label>
+            <input name="numeroTelephoneConducteurA" id="inputConstatNumeroTelephoneConducteurA" type="tel">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatEmailConducteurA">Adresse Mail</label>
+            <input name="emailConducteurA" id="inputConstatEmailConducteurA" type="email">
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <h2>Informations véhicule A</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatMarqueVehiculeA">Marque</label>
+            <input name="marqueConducteurA" id="inputConstatMarqueVehiculeA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatModeleVehiculeA">Modèle</label>
+            <input name="modeleConducteurA" id="inputConstatModeleVehiculeA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatImmatVehiculeA">Immatriculation</label>
+            <input name="immatConducteurA" id="inputConstatImmatVehiculeA" type="text">
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <h2>Informations assureur A</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatNomAssureurA">Nom de l'assureur</label>
+            <input name="nomAssureurConducteurA" id="inputConstatNomAssureurA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatNumeroContratA">N°Contrat du véhicule</label>
+            <input name="numeroContratConducteurA" id="inputConstatNumeroContratA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatCarteVerteA">N°Carte verte</label>
+            <input name="carteVerteConducteurA" id="inputConstatCarteVerteA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatDateValiditeA">Date de validité de l'attestation d'assurance : </label>
+            Du <input name="dateValiditeA" id="inputConstatDateValiditeA" type="date"> au <input name="dateValiditeAbis" id="inputConstatDateValiditeAbis" type="date">
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <h2>Informations permis A</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatNumeroPermisA">N° de permis</label>
+            <input name="numeroPermisConducteurA" id="inputConstatNumeroPermisA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatCategoriePermisA">Catégorie</label>
+            <input name="categoriePermisConducteurA" id="inputConstatCategoriePermisA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatDateValiditePermisA">Date de validité</label>
+            <input name="dateValiditePermisConducteurA" id="inputConstatDateValiditePermisA" type="date">
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <h2>Informations supplementaires véhicule A (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
+        <div class="formConstatInput">
+            <label for="inputConstatFatigueA">Taux de fatigue</label>
+            <input name="fatigueConducteurA" id="inputConstatFatigueA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatLuminositeExterieureA">Niveau de luminosité extérieure</label>
+            <input name="luminositeExterieureConducteurA" id="inputConstatLuminositeExterieureA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatFrequenceCardiaqueA">Fréquence cardiaque</label>
+            <input name="frequenceCardiaqueConducteurA" id="inputConstatFrequenceCardiaqueA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatVitesseA">Vitesse au moment de l'impact</label>
+            <input name="vitesseConducteurA" id="inputConstatVitesseA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatPressionPneusA">Pression des pneus</label>
+            <input name="pressionPneusConducteurA" id="inputConstatPressionPneusA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatTemperaturePneusA">Température des pneus</label>
+            <input name="temperaturePneusConducteurA" id="inputConstatTemperaturePneusA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatCeintureA">Ceinture de sécurité</label>
+            <input name="ceintureConducteurA" id="inputConstatCeintureA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatZoneImpactA">Zone d'impact</label>
+            <input name="zoneImpactConducteurA" id="inputConstatZoneImpactA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatSeveriteImpactA">Sévérité de l'impact</label>
+            <input name="severiteImpactConducteurA" id="inputConstatSeveriteImpactA" type="text">
+        </div>
+        <div class="formConstatInput">
+            <label for="inputConstatStyleConduiteA">Style de conduite</label>
+            <input name="styleConduiteConducteurA" id="inputConstatStyleConduiteA" type="text">
+        </div>
+        <!------------------------------------------------------------------------------------>
+        <div class="formAjoutVehiculeBouton">
+            <a><button type="submit">Ajouter</button></a>
+        </div>
+
+    </form>
+    <a href="listeVehicules.html"><button>Retour</button></a>
+    <button onclick="chargerConstat()">Charger infos</button>
+</div>
+</body>
+<script src="js/script.js"></script>
+</html>

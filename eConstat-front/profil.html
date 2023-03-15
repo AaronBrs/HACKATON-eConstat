@@ -27,7 +27,7 @@
          <span class="tooltip">Accueil</span>
       </li>
       <li>
-       <a href="ajoutVehicule.html">
+       <a href="listeVehicules.html.html">
         <i class="bi bi-car-front-fill"></i>
          <span class="links_name">Mes vehicules</span>
        </a>
@@ -68,28 +68,34 @@
                                     <h3><i class="bi bi-person-fill"></i></h3>
                                 </div>  
                                 <div class="col-9 px-4 py-2">
-                                    <h3 class="openSans bold">Informations Personnelle</h3>
+                                    <h3 class="openSans bold">Informations personnelles</h3>
                                 </div>
                             </div>
                             <div class="row m-3">
                                 <div class="col-6">
                                     <div class="form-groupe">
                                         <label for="">Nom</label>
-                                        <input type="text" name="Nom" id="" class="form-control p-2 px-3 bg-git" placeholder="votre nom...">
+                                        <input type="text" name="Nom" id="" class="form-control p-2 px-3 bg-git" placeholder="Votre nom...">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-groupe">
-                                        <label for="">Prenom</label>
-                                        <input type="text" name="Prenom" id="" class="form-control p-2 px-3 bg-git"  placeholder="votre prenom...">
+                                        <label for="">Prénom</label>
+                                        <input type="text" name="Prenom" id="" class="form-control p-2 px-3 bg-git"  placeholder="Votre prénom...">
                                     </div>
                                 </div>
                             </div>
                             <div class="row m-3">
-                                <div class="col-12">
+                                <div class="col-6">
                                     <div class="form-groupe">
                                         <label for="">Email</label>
-                                        <input type="email" name="Email" id="" class="form-control p-2 px-3 bg-git"  placeholder="votre e-mail...">
+                                        <input type="email" name="Email" id="" class="form-control p-2 px-3 bg-git"  placeholder="Votre adresse mail...">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-groupe">
+                                        <label for="">N°Téléphone</label>
+                                        <input type="tel" name="numTel" id="" class="form-control p-2 px-3 bg-git"  placeholder="Votre numéro de téléphone...">
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +103,7 @@
                                 <div class="col-6" style="position:relative;">
                                     <div class="form-groupe">
                                         <label for="">Adresse</label>
-                                        <input type="text" name="Nom" id="adresse" class="form-control p-2 px-3 bg-git" placeholder="votre Adresse..." onkeypress="httpGet(this.value)">
+                                        <input type="text" name="Nom" id="adresse" class="form-control p-2 px-3 bg-git" placeholder="Votre adresse..." onkeypress="httpGet(this.value)">
                                     </div>
                                     <div class="w-100" id="pays">
                                     </div>
@@ -106,13 +112,13 @@
                                     <div class="col-6">
                                         <div class="form-groupe">
                                             <label for="">Ville</label>
-                                            <input type="text" name="ville" id="ville" class="form-control p-2 px-3 bg-git" placeholder="">
+                                            <input type="text" name="ville" id="ville" class="form-control p-2 px-3 bg-git" placeholder="Votre ville...">
                                         </div>
                                     </div>
                                     <div class="col-6 pe-2">
                                         <div class="form-groupe">
                                             <label for="">Code postal</label>
-                                            <input type="text" name="cpostale" id="cp" class="form-control p-2 px-3 bg-git"  placeholder="">
+                                            <input type="text" name="cpostale" id="cp" class="form-control p-2 px-3 bg-git"  placeholder="Votre code postal...">
                                         </div>
                                     </div>
                                 </div>
@@ -124,14 +130,14 @@
                                     <h3><i class="bi bi-person-fill"></i></h3>
                                 </div>  
                                 <div class="col-9 px-4 py-2">
-                                    <h3 class="openSans bold">Mes Permis</h3>
+                                    <h3 class="openSans bold">Mes permis</h3>
                                 </div>
                             </div>
                             <div class="row bg-bl mx-4 text-center">
                                 <div class="col-3  p-3 text-white border"> <span class="h6">Numero</span></div>
-                                <div class="col-3  p-3 text-white border"> <span class="h6">Categorie</span> </div>
-                                <div class="col-3  p-3 text-white border"> <span class="h6">Date expiration</div>
-                                <div class="col-3  p-3 text-white border"> <span class="h6">Actions </span></div>
+                                <div class="col-3  p-3 text-white border"> <span class="h6">Catégorie</span></div>
+                                <div class="col-3  p-3 text-white border"> <span class="h6">Date d'expiration</span></div>
+                                <div class="col-3  p-3 text-white border"> <span class="h6"></span></div>
                             </div>
                             <div class="row mx-4 text-center">
                                 <div class="col-3  p-3 border"><span>1AGF4682</span> </div>
@@ -142,13 +148,13 @@
                             <div class="row m-3">
                                 <div class="col-4">
                                     <div class="form-groupe">
-                                        <label for="">Numero de Permis</label>
-                                        <input type="text" name="numP" id="" class="form-control p-2 px-3 bg-git" placeholder="numero de permis...">
+                                        <label for="">N° de permis</label>
+                                        <input type="text" name="numP" id="" class="form-control p-2 px-3 bg-git" placeholder="Numero de permis...">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-groupe">
-                                        <label for="">Categorie</label>
+                                        <label for="">Catégorie</label>
                                         <select name="cat" class="form-control p-2 px-3 bg-git" id="">
                                             <option value="AM"> AM  </option>
                                             <option value="A1"> A1  </option>
