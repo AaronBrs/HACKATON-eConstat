@@ -1,17 +1,68 @@
-<html>
-    <head>
-        <title>eConstat | Véhicules</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/font-css.css"> 
+       <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/font-css.css"> 
-        <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+    <title>Accueil</title>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <i class="bi bi-speedometer2 icon"></i>
+        <div class="logo_name">e-constat</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list p-0">
+      <li>
+        <a href="#">
+            <i class="bi bi-house-fill"></i>
+          <span class="links_name">Accueil</span>
+        </a>
+         <span class="tooltip">Accueil</span>
+      </li>
+      <li>
+       <a href="#">
+        <i class="bi bi-car-front-fill"></i>
+         <span class="links_name">Mes vehicules</span>
+       </a>
+       <span class="tooltip">Mes vehicules</span>
+     </li>
+    
+     <li class="profile">
+         <div class="profile-details">
+           <div class="name_job">
+             <div class="name">Deconnexion</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      
+    
+        <div class="top d-flex align-items-center">
+            <div class="Bonjour ps-3">
+                <span class="h1 p-2 m-0">Bonjour Omar</span>
+            </div>
+            <div class="Compte">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill h2 text-muted m-0"></i>  
+                </a>
+                <span class="tooltip">Compte</span>
+            </div>
+        </div>
+
+
+        
+            
         <div id="formConnexion">
             <div class="titleListeVehicules">
                 <h1>Mes véhicules</h1>
@@ -45,8 +96,35 @@
 
                 </div>
             </div>
-            <button>Retour à l'accueil</button>
         </div>
-    </body>
-    <script src="js/script.js"></script>
+
+
+
+
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+  </body>
 </html>
