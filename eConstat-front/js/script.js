@@ -1,10 +1,10 @@
 //
-const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge"};
-const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire"};
-const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune"};
-const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron"};
-const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise"};
-const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche"};
+const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", Assureur:"AXA Auto",Contrat:"122SDE17446"};
 //------------------------------------------------------------------------------------------
 const permis1 = {numeroPermis:"123456789", categorie:"Permis A", dateValidite:"12-02-2031"};
 const permis2 = {numeroPermis:"987654321", categorie:"Permis B", dateValidite:"21-07-2028"};
@@ -20,6 +20,14 @@ mesVoitures.push(voiture6)
 const mesPermis = new Array()
 mesPermis.push(permis1)
 mesPermis.push(permis2)
+//------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 //------------------------------------------------------------------------------------------
 function afficherFormulaire(){
     const formulaireConnexion = document.getElementById("formConnexion");
@@ -69,10 +77,20 @@ function chargerVehicule(){
 }
 function afficherVehicules(){
     const listeVehicules = document.getElementById('listeVehicules');
+    listeVehicules.innerHTML = '<div class="row bg-bl p-3 text-white text-center col-12 m-0 h5"><div class="col-2">Type de vehicules</div>'
+                    +'<div class="col-2">Immatriculation</div>'
+                    +'<div class="col-2">Marque</div>'
+                    +'<div class="col-2">Modeel</div>'
+                    +'<div class="col-2">Assureur</div>'
+                    +'<div class="col-2">Contrat</div>'
+                    +'</div>';
     mesVoitures.forEach((voiture)=>{
-        const li = document.createElement('li');
-        li.innerHTML = "<div><div>"+voiture.marque+" "+voiture.modele+"</div><div>"+voiture.immat+"</div></div>";
-        listeVehicules.appendChild(li);
+        listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div><div class="col-2">'+voiture.immat+'</div>'
+                    +'<div class="col-2">'+voiture.marque+'</div>'
+                    +'<div class="col-2">'+voiture.modele+'</div>'
+                    +'<div class="col-2">'+voiture.Assureur+'</div>'
+                    +'<div class="col-2">'+voiture.Contrat+'</div>'
+                    +'</div>';
     })
 }
 if(document.getElementById("inputAjoutVehiculePermis")!=null){

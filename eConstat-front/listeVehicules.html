@@ -21,14 +21,14 @@
     </div>
     <ul class="nav-list p-0">
       <li>
-        <a href="#">
+        <a href="home.html">
             <i class="bi bi-house-fill"></i>
           <span class="links_name">Accueil</span>
         </a>
          <span class="tooltip">Accueil</span>
       </li>
       <li>
-       <a href="#">
+       <a href="listeVehicules.html">
         <i class="bi bi-car-front-fill"></i>
          <span class="links_name">Mes vehicules</span>
        </a>
@@ -73,7 +73,7 @@
                     <button class="btn btn-success" onclick="popup()">+ Ajout véhicule</button>
                 </div>
             </div>
-            <div class="row bg-white">
+            <div class="row bg-white" id ="listeVehicules">
                 <!--<ul id="listeVehicules">
                     <li>
                         <div>
@@ -83,12 +83,12 @@
                 </ul>-->
 
                 <div class="row bg-bl p-3 text-white text-center col-12 m-0 h5">
-                    <di class="col-2">Type de vehicules</di>
-                    <di class="col-2">Immatriculation</di>
-                    <di class="col-2">Marque</di>
-                    <di class="col-2">Modeel</di>
-                    <di class="col-2">Assureur</di>
-                    <di class="col-2">Contrat</di>
+                    <div class="col-2">Type de vehicules</div>
+                    <div class="col-2">Immatriculation</div>
+                    <div class="col-2">Marque</div>
+                    <div class="col-2">Modeel</div>
+                    <div class="col-2">Assureur</div>
+                    <div class="col-2">Contrat</div>
                 </div>
                 <div class="row m-0 text-center p-3 ">
                     <di class="col-2"><i class="bi bi-car-front h3"></i></di>
@@ -122,14 +122,14 @@
 
 
 
-        <div id="popup" class="popupContainer">
+        <div id="popup" class="popupContainer d-none">
             <div id="formAjoutVehicule" class="popup border rounded shadow">
                 <div class="titleAjoutVehicule d-flex justify-content-between">
                     <div>
                         <h1>AJOUT VEHICULE</h1>
                     </div>
                     <div>
-                        <button class="btn btn-outline-danger">
+                        <button class="btn btn-outline-danger" onclick="hidepopup()">
                             <i class="bi bi-x-lg"></i>
                         </button>
                     </div>
@@ -187,6 +187,7 @@
 
   </section>
 
+  <script src="js/script.js"></script>
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
@@ -212,7 +213,10 @@
   }
 
   function popup(){
-
+    document.getElementById('popup').classList.remove('d-none')
+  }
+  function hidepopup(){
+    document.getElementById('popup').classList.add('d-none')
   }
   </script>
   </body>
