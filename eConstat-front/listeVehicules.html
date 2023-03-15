@@ -1,25 +1,223 @@
-<html>
-    <head>
-        <title>eConstat | Véhicules</title>
-        <meta charset="utf-8" />
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="formConnexion">
-            <div class="titleListeVehicules">
-                <h1>Mes véhicules</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/font-css.css">
+       <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <i class="bi bi-speedometer2 icon"></i>
+        <div class="logo_name">e-constat</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list p-0">
+      <li>
+        <a href="home.html">
+            <i class="bi bi-house-fill"></i>
+          <span class="links_name">Accueil</span>
+        </a>
+         <span class="tooltip">Accueil</span>
+      </li>
+      <li>
+       <a href="listeVehicules.html">
+        <i class="bi bi-car-front-fill"></i>
+         <span class="links_name">Mes vehicules</span>
+       </a>
+       <span class="tooltip">Mes vehicules</span>
+     </li>
+
+     <li class="profile">
+         <div class="profile-details">
+           <div class="name_job">
+             <div class="name">Deconnexion</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+
+
+        <div class="top d-flex align-items-center">
+            <div class="Bonjour ps-3">
+                <span class="h1 p-2 m-0">Bonjour Omar</span>
             </div>
-            <div>
-                <ul id="listeVehicules">
+            <div class="Compte">
+                <a href="profil.html">
+                    <i class="bi bi-person-fill h2 text-muted m-0"></i>
+                </a>
+                <span class="tooltip">Compte</span>
+            </div>
+        </div>
+
+
+
+
+        <div class="main px-5 mx-5 " id="formConnexion">
+            <div class="titleListeVehicules mb-3 d-flex justify-content-between w-100">
+                <div>
+                    <h2>Mes véhicules</h2>
+
+                </div>
+                <div>
+                    <button class="btn btn-success" onclick="popup()">+ Ajout véhicule</button>
+                </div>
+            </div>
+            <div class="row bg-white" id ="listeVehicules">
+                <!--<ul id="listeVehicules">
                     <li>
                         <div>
-                            <a href="ajoutVehicule.html"><button>+ Ajout véhicule</button></a>
+                            <button>+ Ajout véhicule</button>
                         </div>
                     </li>
-                </ul>
+                </ul>-->
+
+                <div class="row bg-bl p-3 text-white text-center col-12 m-0 h5">
+                    <div class="col-2">Type de vehicules</div>
+                    <div class="col-2">Immatriculation</div>
+                    <div class="col-2">Marque</div>
+                    <div class="col-2">Modeel</div>
+                    <div class="col-2">Assureur</div>
+                    <div class="col-2">Contrat</div>
+                </div>
+                <div class="row m-0 text-center p-3 ">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
+                </div>
+                <div class="row p-3 m-0 text-center">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
+                </div>
+                <div class="row p-3 m-0 text-center">
+                    <di class="col-2"><i class="bi bi-car-front h3"></i></di>
+                    <di class="col-2">AB-123-YZ</di>
+                    <di class="col-2">Citroen</di>
+                    <di class="col-2">DS4</di>
+                    <di class="col-2">AXA Auto</di>
+                    <di class="col-2">122SDE17446</di>
+                </div>
             </div>
-            <a href="home.html"><button>Retour à l'accueil</button></a>
         </div>
-    </body>
-    <script src="js/script.js"></script>
+
+
+
+
+
+
+        <div id="popup" class="popupContainer d-none">
+            <div id="formAjoutVehicule" class="popup border rounded shadow">
+                <div class="titleAjoutVehicule d-flex justify-content-between">
+                    <div>
+                        <h1>AJOUT VEHICULE</h1>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-danger" onclick="hidepopup()">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+                <form class="row">
+                    <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
+                        <label for="inputAjoutVehiculeToken">TokenVehicule</label>
+                        <input id="inputAjoutVehiculeToken" type="text" class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeMarque">Marque</label>
+                        <input id="inputAjoutVehiculeMarque" type="text" disabled class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeModele">Modele</label>
+                        <input id="inputAjoutVehiculeModele" type="text" disabled class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
+                        <input id="inputAjoutVehiculePlaque" type="text" disabled class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNomAssureur">Nom de l'assureur</label>
+                        <input id="inputAjoutVehiculeNomAssureur" type="text" class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNumeroContrat">Numéro de contrat</label>
+                        <input id="inputAjoutVehiculeNumeroContrat" type="text" class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                        <label for="inputAjoutVehiculeNumeroCarteVerte">Numéro de carte verte</label>
+                        <input id="inputAjoutVehiculeNumeroCarteVerte" type="text" class="form-control ">
+                    </div>
+
+                    <div class="formAjoutVehiculeInput form-group col-5 my-3 p-2">
+                        <label for="inputAjoutVehiculePermis">Permis de conduire associé :</label>
+                        <select name="permis" id="inputAjoutVehiculePermis" class="form-control ">
+                            <option value="">Sélectionner un permis</option>
+                        </select>
+                    </div>
+
+                    <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
+                        <button type="button" class="btn btn-primary">Ajouter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+  </section>
+
+  <script src="js/script.js"></script>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+
+  function popup(){
+    document.getElementById('popup').classList.remove('d-none')
+  }
+  function hidepopup(){
+    document.getElementById('popup').classList.add('d-none')
+  }
+  </script>
+  </body>
 </html>

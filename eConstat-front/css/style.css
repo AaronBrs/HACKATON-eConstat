@@ -1,3 +1,87 @@
 .titleConnexion, .titleInscription,.titleListeVehicules, .titleAjoutVehicule{
     text-transform: uppercase;
 }
+.container-flex{  
+    flex-wrap: wrap;
+    gap:3rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display:flex;
+  }
+  .container-flex .vh{
+    border: 2px solid #dbdbdb;
+    border-radius: .25rem;
+  min-width: 15rem;
+  min-height: 15rem;
+  width: 15rem;
+  height: 15rem;
+  box-shadow: 0px 0px 10px #eee;
+
+  }
+
+  .d-grid.immat{
+    grid-template-columns: 20px 1fr 20px;
+    display: grid;
+    height: 3rem;
+    gap: .5rem;
+    overflow: hidden;
+    align-items:center;
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: .3rem;
+  }
+  .d-grid.immat div{
+    height: 100%;
+    display: grid;
+    align-items:center;
+    text-align: center;
+  }
+
+
+  .popupContainer{
+    display:grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.185);
+    align-items: center;
+  }
+
+  
+  .popupContainer .popup{
+    margin: 0 auto;
+    padding:2rem;
+    background: white;
+    width: 50rem;
+    animation-name: slideInDown;
+    animation-duration: .5s;;
+  }
+
+  /* Sliding entrances */
+@-webkit-keyframes slideInDown {
+    from {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes slideInDown {
+    from {
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
