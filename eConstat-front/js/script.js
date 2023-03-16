@@ -23,9 +23,6 @@ if(localStorage.getItem('MVH')=='' || localStorage.getItem('MVH')==null){
 const mesPermis = new Array(permis1, permis2)
 //------------------------------------------------------------------------------------------
 
-<<<<<<< Updated upstream
-//----Changement de vue sur la connexion----//
-=======
 function addVh(){
     var MVH = JSON.parse(localStorage.getItem('MVH'));
     v.marque=document.getElementById('inputAjoutVehiculeMarque').value;
@@ -48,7 +45,6 @@ function addVh(){
 
 
 //------------------------------------------------------------------------------------------
->>>>>>> Stashed changes
 function afficherFormulaire(){
     const formulaireConnexion = document.getElementById("formConnexion");
     const formulaireInscription = document.getElementById("formInscription");
@@ -103,14 +99,8 @@ function afficherVehicules(){
                     +'<div class="col-2">Assureur</div>'
                     +'<div class="col-2">Contrat</div>'
                     +'</div>';
-<<<<<<< Updated upstream
-    mesVoitures.forEach((voiture)=>{
-        listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div>'
-                    +'<div class="col-2">'+voiture.immat+'</div>'
-=======
     JSON.parse(localStorage.getItem('MVH')).forEach((voiture)=>{
         listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div><div class="col-2">'+voiture.immat+'</div>'
->>>>>>> Stashed changes
                     +'<div class="col-2">'+voiture.marque+'</div>'
                     +'<div class="col-2">'+voiture.modele+'</div>'
                     +'<div class="col-2">'+voiture.nomAssureur+'</div>'
