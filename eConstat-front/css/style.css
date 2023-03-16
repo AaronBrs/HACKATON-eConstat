@@ -1,5 +1,6 @@
-.titleConnexion, .titleInscription,.titleListeVehicules, .titleAjoutVehicule{
-    text-transform: uppercase;
+.titleConnexion, .titleInscription,.titleListeVehicules, .titleAjoutVehicule, .titleConstat{
+  text-align: center;
+  text-transform: uppercase;
 }
 .container-flex{  
     flex-wrap: wrap;

@@ -17,40 +17,40 @@
     <div class="titleConstat">
         <h1>Constat</h1>
     </div>
-        <div class="row col-10 py-2 px-5 mx-5 my-3">
-            <div class="col-12">
-                <h2>Divers</h2>
-            </div>
-            <div class="formConstatInput col-6 form-group col-6 form-group">
-                <label for="inputConstatDate">Date de l'accident</label>
-                <input name="date" id="inputConstatDate" type="date" class="form-control p-3 m-2">
-            </div>
-            <div class="formConstatInput col-6 form-group col-6 form-group">
-                <label for="inputConstatHeure">Heure de l'accident</label>
-                <input name="heure" id="inputConstatHeure" type="time" class="form-control p-3 m-2">
-            </div>
-            <div class="formConstatInput col-6 form-group col-6 form-group">
-                <p>Blessés même légers<p>
-                <input required id="inputConstatDegatsHumainsOui" name="blesses" value="oui" type="radio" >
-                <label for="inputConstatDegatsHumainsOui">Oui</label>
-                <input required id="inputConstatDegatsHumainsNon" name="blesses" value="non" type="radio">
-                <label for="inputConstatDegatsHumainsNon">Non</label>
-            </div>
-            <div class="formConstatInput col-6 form-group col-6 form-group">
-                <p>Dégats matériels à d'autres véhicules que ceux du constat</p>
-                <input id="inputConstatDegatsAutresVehiculesOui" name="autresvehicules" value="oui" type="radio">
-                <label for="inputConstatDegatsAutresVehiculesOui">Oui</label>
-                <input id="inputConstatDegatsAutresVehiculesNon" name="autresvehicules" value="non" type="radio">
-                <label for="inputConstatDegatsAutresVehiculesNon">Non</label>
-            </div>
-            <div class="formConstatInput col-6 form-group col-6 form-group">
-                <p>Dégats matériels à des objets autres que des véhicules</p>
-                <input id="inputConstatDegatsAutresOui" name="autres" value="oui" type="radio">
-                <label for="inputConstatDegatsAutresOui">Oui</label>
-                <input id="inputConstatDegatsAutresNon" name="autres" value="non" type="radio">
-                <label for="inputConstatDegatsAutresNon">Non</label>
-            </div>
+    <div class="row col-10 py-2 px-5 mx-5 my-3">
+        <div class="col-12">
+            <h2>Divers</h2>
         </div>
+        <div class="formConstatInput col-6 form-group col-6 form-group">
+            <label for="inputConstatDate">Date de l'accident</label>
+            <input name="date" id="inputConstatDate" type="date" class="form-control p-3 m-2">
+        </div>
+        <div class="formConstatInput col-6 form-group col-6 form-group">
+            <label for="inputConstatHeure">Heure de l'accident</label>
+            <input name="heure" id="inputConstatHeure" type="time" class="form-control p-3 m-2">
+        </div>
+        <div class="formConstatInput col-6 form-group col-6 form-group">
+            <p>Blessés même légers<p>
+            <input required id="inputConstatDegatsHumainsOui" name="blesses" value="oui" type="radio" >
+            <label for="inputConstatDegatsHumainsOui">Oui</label>
+            <input required id="inputConstatDegatsHumainsNon" name="blesses" value="non" type="radio">
+            <label for="inputConstatDegatsHumainsNon">Non</label>
+        </div>
+        <div class="formConstatInput col-6 form-group col-6 form-group">
+            <p>Dégats matériels à d'autres véhicules que ceux du constat</p>
+            <input id="inputConstatDegatsAutresVehiculesOui" name="autresvehicules" value="oui" type="radio">
+            <label for="inputConstatDegatsAutresVehiculesOui">Oui</label>
+            <input id="inputConstatDegatsAutresVehiculesNon" name="autresvehicules" value="non" type="radio">
+            <label for="inputConstatDegatsAutresVehiculesNon">Non</label>
+        </div>
+        <div class="formConstatInput col-6 form-group col-6 form-group">
+            <p>Dégats matériels à des objets autres que des véhicules</p>
+            <input id="inputConstatDegatsAutresOui" name="autres" value="oui" type="radio">
+            <label for="inputConstatDegatsAutresOui">Oui</label>
+            <input id="inputConstatDegatsAutresNon" name="autres" value="non" type="radio">
+            <label for="inputConstatDegatsAutresNon">Non</label>
+        </div>
+    </div>
     <form class="col-5" style="background-color: #ffd75d3b;">
         <!------------------------------------------------------------------------------------>
       
@@ -159,7 +159,7 @@
         <div class="row col-12 px-5 py-2 m-2">
             <!------------------------------------------------------------------------------------>
             <div class="col-12">
-                <h2>Informations supplementaires véhicule A (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
+                <h2>Informations supplementaires véhicule A</h2>
             </div>
             <div class="formConstatInput col-6 form-group">
                 <label for="inputConstatFatigueA">Taux de fatigue</label>
@@ -204,28 +204,25 @@
         </div>
 
         <div class="row col-12 px-5 py-2 m-2">
-            <!------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------>
             <div class="col-12">
-                <h2>Pieces joint</h2>
+                <h2>Pièces jointes</h2>
             </div>
             <div class="formConstatInput col-12 form-group">
-                <label for="inputConstatNumeroPermisA">choisir un fichier</label>
-                <input name="numeroPermisConducteurA" id="inputConstatNumeroPermisA" type="file" class="form-control p-3 m-2">
+                <label for="inputConstatPJA">Ajouter une vidéo ou une photo</label>
+                <input name="PJConducteurA" id="inputConstatPJA" type="file" class="form-control p-3 m-2">
             </div>
         </div>
-            <!------------------------------------------------------------------------------------>
-            <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
-                <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
-                    <a><button type="submit" class="btn btn-primary">valider</button></a>
-                </div>
+        <!------------------------------------------------------------------------------------>
+        <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
+            <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
+                <a><button type="submit" class="btn btn-primary">Valider</button></a>
             </div>
-
+        </div>
     </form>
 
     <form class="col-5" style="background-color: #5dabff3b;">
         <!------------------------------------------------------------------------------------>
-      
-            <!------------------------------------------------------------------------------------>
         <div class="row col-12 px-5 py-2 m-2">
             <div class="col-12">
                 <h2>Informations conducteur B</h2>
@@ -330,7 +327,7 @@
         <div class="row col-12 px-5 py-2 m-2">
             <!------------------------------------------------------------------------------------>
             <div class="col-12">
-                <h2>Informations supplementaires véhicule B (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
+                <h2>Informations supplementaires véhicule B</h2>
             </div>
             <div class="formConstatInput col-6 form-group">
                 <label for="inputConstatFatigueB">Taux de fatigue</label>
@@ -376,17 +373,17 @@
         <div class="row col-12 px-5 py-2 m-2">
             <!------------------------------------------------------------------------------------>
             <div class="col-12">
-                <h2>Pieces joint</h2>
+                <h2>Pièces jointes</h2>
             </div>
             <div class="formConstatInput col-12 form-group">
-                <label for="inputConstatNumeroPermisA">choisir un fichier</label>
-                <input name="numeroPermisConducteurA" id="inputConstatNumeroPermisA" type="file" class="form-control p-3 m-2">
+                <label for="inputConstatPJB">Ajouter une vidéo ou une photo</label>
+                <input name="PJConducteurB" id="inputConstatPJB" type="file" class="form-control p-3 m-2">
             </div>
         </div>
             <!------------------------------------------------------------------------------------>
             <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
                 <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
-                    <a><button type="submit" class="btn btn-primary">valider</button></a>
+                    <a><button type="submit" class="btn btn-primary">Valider</button></a>
                 </div>
             </div>
         </div>
