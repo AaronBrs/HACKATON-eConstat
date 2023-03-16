@@ -2,170 +2,372 @@
 <head>
     <title>eConstat | Constat</title>
     <meta charset="utf-8" />
-    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/font-css.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <style> 
+    input[type="text"], input[type="email"], input[type="tel"] {
+  background-color: #fff;
+}
+    </style>
 </head>
 <body>
-<div id="formConstat">
+<div id="formConstat" class="row justify-content-evenly">
     <div class="titleConstat">
         <h1>Constat</h1>
     </div>
-    <form>
+        <div class="row col-10 py-2 px-5 mx-5 my-3">
+            <div class="col-12">
+                <h2>Divers</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatDate">Date de l'accident</label>
+                <input name="date" id="inputConstatDate" type="date" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatHeure">Heure de l'accident</label>
+                <input name="heure" id="inputConstatHeure" type="time" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <p>Blessés même légers<p>
+                <input required id="inputConstatDegatsHumainsOui" name="blesses" value="oui" type="radio" >
+                <label for="inputConstatDegatsHumainsOui">Oui</label>
+                <input required id="inputConstatDegatsHumainsNon" name="blesses" value="non" type="radio">
+                <label for="inputConstatDegatsHumainsNon">Non</label>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <p>Dégats matériels à d'autres véhicules que ceux du constat</p>
+                <input id="inputConstatDegatsAutresVehiculesOui" name="autresvehicules" value="oui" type="radio">
+                <label for="inputConstatDegatsAutresVehiculesOui">Oui</label>
+                <input id="inputConstatDegatsAutresVehiculesNon" name="autresvehicules" value="non" type="radio">
+                <label for="inputConstatDegatsAutresVehiculesNon">Non</label>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <p>Dégats matériels à des objets autres que des véhicules</p>
+                <input id="inputConstatDegatsAutresOui" name="autres" value="oui" type="radio">
+                <label for="inputConstatDegatsAutresOui">Oui</label>
+                <input id="inputConstatDegatsAutresNon" name="autres" value="non" type="radio">
+                <label for="inputConstatDegatsAutresNon">Non</label>
+            </div>
+        </div>
+    <form class="col-5" style="background-color: #ffd75d3b;">
         <!------------------------------------------------------------------------------------>
-        <h2>Divers</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatDate">Date de l'accident</label>
-            <input name="date" id="inputConstatDate" type="date">
+      
+            <!------------------------------------------------------------------------------------>
+        <div class="row col-12 px-5 py-2 m-2">
+            <div class="col-12">
+                <h2>Informations conducteur A</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNomConducteurA">Nom</label>
+                <input name="nomConducteurA" id="inputConstatNomConducteurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatPrenomConducteurA">Prenom</label>
+                <input name="prenomConducteurA" id="inputConstatPrenomConducteurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatDateNaissanceConducteurA">Date de naissance</label>
+                <input name="dateNaissanceConducteurA" id="inputConstatDateNaissanceConducteurA" type="date" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatAdresseConducteurA">Adresse</label>
+                <input name="adresseConducteurA" id="inputConstatAdresseConducteurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatCodePostalConducteurA">Code postal</label>
+                <input name="codePostalConducteurA" id="inputConstatCodePostalConducteurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatPaysConducteurA">Pays</label>
+                <input name="paysConducteurA" id="inputConstatPaysConducteurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNumeroTelephoneConducteurA">N°Téléphone</label>
+                <input name="numeroTelephoneConducteurA" id="inputConstatNumeroTelephoneConducteurA" type="tel" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatEmailConducteurA">Adresse Mail</label>
+                <input name="emailConducteurA" id="inputConstatEmailConducteurA" type="email" class="form-control p-3 m-2">
+            </div>
+            <!------------------------------------------------------------------------------------>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatHeure">Heure de l'accident</label>
-            <input name="heure" id="inputConstatHeure" type="time">
+        <div class="row col-12 px-5 py-2 m-2">
+            <div class="col-12">
+                <h2>Informations véhicule A</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatMarqueVehiculeA">Marque</label>
+                <input name="marqueConducteurA" id="inputConstatMarqueVehiculeA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatModeleVehiculeA">Modèle</label>
+                <input name="modeleConducteurA" id="inputConstatModeleVehiculeA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatImmatVehiculeA">Immatriculation</label>
+                <input name="immatConducteurA" id="inputConstatImmatVehiculeA" type="text" class="form-control p-3 m-2">
+            </div>
         </div>
-        <div class="formConstatInput">
-            <p>Blessés même légers<p>
-            <input required id="inputConstatDegatsHumainsOui" name="blesses" value="oui" type="radio">
-            <label for="inputConstatDegatsHumainsOui">Oui</label>
-            <input required id="inputConstatDegatsHumainsNon" name="blesses" value="non" type="radio">
-            <label for="inputConstatDegatsHumainsNon">Non</label>
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations assureur A</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNomAssureurA">Nom de l'assureur</label>
+                <input name="nomAssureurConducteurA" id="inputConstatNomAssureurA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatNumeroContratA">N°Contrat du véhicule</label>
+                <input name="numeroContratConducteurA" id="inputConstatNumeroContratA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCarteVerteA">N°Carte verte</label>
+                <input name="carteVerteConducteurA" id="inputConstatCarteVerteA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-12 form-group row">
+                <label for="inputConstatDateValiditeA">Date de validité de l'attestation d'assurance : </label>
+                <div class="col-6">
+                    Du <input name="dateValiditeA" id="inputConstatDateValiditeA" type="date" class="form-control p-3 m-2"> 
+                </div>
+                <div class="col-6">
+                    au <input name="dateValiditeAbis" id="inputConstatDateValiditeAbis" type="date" class="form-control p-3 m-2">
+                </div>
+            </div>
         </div>
-        <div class="formConstatInput">
-            <p>Dégats matériels à d'autres véhicules que ceux du constat</p>
-            <input id="inputConstatDegatsAutresVehiculesOui" name="autresvehicules" value="oui" type="radio">
-            <label for="inputConstatDegatsAutresVehiculesOui">Oui</label>
-            <input id="inputConstatDegatsAutresVehiculesNon" name="autresvehicules" value="non" type="radio">
-            <label for="inputConstatDegatsAutresVehiculesNon">Non</label>
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations permis A</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatNumeroPermisA">N° de permis</label>
+                <input name="numeroPermisConducteurA" id="inputConstatNumeroPermisA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCategoriePermisA">Catégorie</label>
+                <input name="categoriePermisConducteurA" id="inputConstatCategoriePermisA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatDateValiditePermisA">Date de validité</label>
+                <input name="dateValiditePermisConducteurA" id="inputConstatDateValiditePermisA" type="date" class="form-control p-3 m-2">
+            </div>
+            <!------------------------------------------------------------------------------------>
         </div>
-        <div class="formConstatInput">
-            <p>Dégats matériels à des objets autres que des véhicules</p>
-            <input id="inputConstatDegatsAutresOui" name="autres" value="oui" type="radio">
-            <label for="inputConstatDegatsAutresOui">Oui</label>
-            <input id="inputConstatDegatsAutresNon" name="autres" value="non" type="radio">
-            <label for="inputConstatDegatsAutresNon">Non</label>
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations supplementaires véhicule A (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatFatigueA">Taux de fatigue</label>
+                <input name="fatigueConducteurA" id="inputConstatFatigueA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatLuminositeExterieureA">Niveau de luminosité extérieure</label>
+                <input name="luminositeExterieureConducteurA" id="inputConstatLuminositeExterieureA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatFrequenceCardiaqueA">Fréquence cardiaque</label>
+                <input name="frequenceCardiaqueConducteurA" id="inputConstatFrequenceCardiaqueA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatVitesseA">Vitesse au moment de l'impact</label>
+                <input name="vitesseConducteurA" id="inputConstatVitesseA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatPressionPneusA">Pression des pneus</label>
+                <input name="pressionPneusConducteurA" id="inputConstatPressionPneusA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatTemperaturePneusA">Température des pneus</label>
+                <input name="temperaturePneusConducteurA" id="inputConstatTemperaturePneusA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCeintureA">Ceinture de sécurité</label>
+                <input name="ceintureConducteurA" id="inputConstatCeintureA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatZoneImpactA">Zone d'impact</label>
+                <input name="zoneImpactConducteurA" id="inputConstatZoneImpactA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatSeveriteImpactA">Sévérité de l'impact</label>
+                <input name="severiteImpactConducteurA" id="inputConstatSeveriteImpactA" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatStyleConduiteA">Style de conduite</label>
+                <input name="styleConduiteConducteurA" id="inputConstatStyleConduiteA" type="text" class="form-control p-3 m-2">
+            </div>
         </div>
+            <!------------------------------------------------------------------------------------>
+            <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
+                <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
+                    <a><button type="submit" class="btn btn-primary">valider</button></a>
+                </div>
+            </div>
+
+    </form>
+
+    <form class="col-5" style="background-color: #5dabff3b;">
         <!------------------------------------------------------------------------------------>
-        <h2>Informations conducteur A</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatNomConducteurA">Nom</label>
-            <input name="nomConducteurA" id="inputConstatNomConducteurA" type="text">
+      
+            <!------------------------------------------------------------------------------------>
+        <div class="row col-12 px-5 py-2 m-2">
+            <div class="col-12">
+                <h2>Informations conducteur B</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNomConducteurB">Nom</label>
+                <input name="nomConducteurA" id="inputConstatNomConducteurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatPrenomConducteurB">Prenom</label>
+                <input name="prenomConducteurA" id="inputConstatPrenomConducteurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatDateNaissanceConducteurB">Date de naissance</label>
+                <input name="dateNaissanceConducteurA" id="inputConstatDateNaissanceConducteurB" type="date" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatAdresseConducteurB">Adresse</label>
+                <input name="adresseConducteurA" id="inputConstatAdresseConducteurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatCodePostalConducteurB">Code postal</label>
+                <input name="codePostalConducteurA" id="inputConstatCodePostalConducteurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatPaysConducteurB">Pays</label>
+                <input name="paysConducteurA" id="inputConstatPaysConducteurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNumeroTelephoneConducteurB">N°Téléphone</label>
+                <input name="numeroTelephoneConducteurA" id="inputConstatNumeroTelephoneConducteurB" type="tel" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatEmailConducteurB">Adresse Mail</label>
+                <input name="emailConducteurA" id="inputConstatEmailConducteurB" type="email" class="form-control p-3 m-2">
+            </div>
+            <!------------------------------------------------------------------------------------>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatPrenomConducteurA">Prenom</label>
-            <input name="prenomConducteurA" id="inputConstatPrenomConducteurA" type="text">
+        <div class="row col-12 px-5 py-2 m-2">
+            <div class="col-12">
+                <h2>Informations véhicule B</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatMarqueVehiculeB">Marque</label>
+                <input name="marqueConducteurA" id="inputConstatMarqueVehiculeB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatModeleVehiculeB">Modèle</label>
+                <input name="modeleConducteurA" id="inputConstatModeleVehiculeB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatImmatVehiculeB">Immatriculation</label>
+                <input name="immatConducteurA" id="inputConstatImmatVehiculeB" type="text" class="form-control p-3 m-2">
+            </div>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatDateNaissanceConducteurA">Date de naissance</label>
-            <input name="dateNaissanceConducteurA" id="inputConstatDateNaissanceConducteurA" type="date">
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations assureur B</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group col-6 form-group">
+                <label for="inputConstatNomAssureurB">Nom de l'assureur</label>
+                <input name="nomAssureurConducteurA" id="inputConstatNomAssureurB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatNumeroContratB">N°Contrat du véhicule</label>
+                <input name="numeroContratConducteurB" id="inputConstatNumeroContratB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCarteVerteB">N°Carte verte</label>
+                <input name="carteVerteConducteurB" id="inputConstatCarteVerteB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-12 form-group row">
+                <label for="inputConstatDateValiditeB">Date de validité de l'attestation d'assurance : </label>
+                <div class="col-6">
+                    Du <input name="dateValiditeB" id="inputConstatDateValiditeB" type="date" class="form-control p-3 m-2"> 
+                </div>
+                <div class="col-6">
+                    au <input name="dateValiditeBbis" id="inputConstatDateValiditeBbis" type="date" class="form-control p-3 m-2">
+                </div>
+            </div>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatAdresseConducteurA">Adresse</label>
-            <input name="adresseConducteurA" id="inputConstatAdresseConducteurA" type="text">
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations permis B</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatNumeroPermisB">N° de permis</label>
+                <input name="numeroPermisConducteurB" id="inputConstatNumeroPermisB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCategoriePermisB">Catégorie</label>
+                <input name="categoriePermisConducteurB" id="inputConstatCategoriePermisB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatDateValiditePermisB">Date de validité</label>
+                <input name="dateValiditePermisConducteurB" id="inputConstatDateValiditePermisB" type="date" class="form-control p-3 m-2">
+            </div>
+            <!------------------------------------------------------------------------------------>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatCodePostalConducteurA">Code postal</label>
-            <input name="codePostalConducteurA" id="inputConstatCodePostalConducteurA" type="text">
+        <div class="row col-12 px-5 py-2 m-2">
+            <!------------------------------------------------------------------------------------>
+            <div class="col-12">
+                <h2>Informations supplementaires véhicule B (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatFatigueB">Taux de fatigue</label>
+                <input name="fatigueConducteurB" id="inputConstatFatigueB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatLuminositeExterieureB">Niveau de luminosité extérieure</label>
+                <input name="luminositeExterieureConducteurB" id="inputConstatLuminositeExterieureB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatFrequenceCardiaqueB">Fréquence cardiaque</label>
+                <input name="frequenceCardiaqueConducteurB" id="inputConstatFrequenceCardiaqueB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatVitesseB">Vitesse au moment de l'impact</label>
+                <input name="vitesseConducteurB" id="inputConstatVitesseB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatPressionPneusB">Pression des pneus</label>
+                <input name="pressionPneusConducteurB" id="inputConstatPressionPneusB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatTemperaturePneusB">Température des pneus</label>
+                <input name="temperaturePneusConducteurB" id="inputConstatTemperaturePneusB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatCeintureB">Ceinture de sécurité</label>
+                <input name="ceintureConducteurB" id="inputConstatCeintureB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatZoneImpactB">Zone d'impact</label>
+                <input name="zoneImpactConducteurB" id="inputConstatZoneImpactB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatSeveriteImpactB">Sévérité de l'impact</label>
+                <input name="severiteImpactConducteurB" id="inputConstatSeveriteImpactB" type="text" class="form-control p-3 m-2">
+            </div>
+            <div class="formConstatInput col-6 form-group">
+                <label for="inputConstatStyleConduiteB">Style de conduite</label>
+                <input name="styleConduiteConducteurB" id="inputConstatStyleConduiteB" type="text" class="form-control p-3 m-2">
+            </div>
         </div>
-        <div class="formConstatInput">
-            <label for="inputConstatPaysConducteurA">Pays</label>
-            <input name="paysConducteurA" id="inputConstatPaysConducteurA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatNumeroTelephoneConducteurA">N°Téléphone</label>
-            <input name="numeroTelephoneConducteurA" id="inputConstatNumeroTelephoneConducteurA" type="tel">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatEmailConducteurA">Adresse Mail</label>
-            <input name="emailConducteurA" id="inputConstatEmailConducteurA" type="email">
-        </div>
-        <!------------------------------------------------------------------------------------>
-        <h2>Informations véhicule A</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatMarqueVehiculeA">Marque</label>
-            <input name="marqueConducteurA" id="inputConstatMarqueVehiculeA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatModeleVehiculeA">Modèle</label>
-            <input name="modeleConducteurA" id="inputConstatModeleVehiculeA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatImmatVehiculeA">Immatriculation</label>
-            <input name="immatConducteurA" id="inputConstatImmatVehiculeA" type="text">
-        </div>
-        <!------------------------------------------------------------------------------------>
-        <h2>Informations assureur A</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatNomAssureurA">Nom de l'assureur</label>
-            <input name="nomAssureurConducteurA" id="inputConstatNomAssureurA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatNumeroContratA">N°Contrat du véhicule</label>
-            <input name="numeroContratConducteurA" id="inputConstatNumeroContratA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatCarteVerteA">N°Carte verte</label>
-            <input name="carteVerteConducteurA" id="inputConstatCarteVerteA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatDateValiditeA">Date de validité de l'attestation d'assurance : </label>
-            Du <input name="dateValiditeA" id="inputConstatDateValiditeA" type="date"> au <input name="dateValiditeAbis" id="inputConstatDateValiditeAbis" type="date">
-        </div>
-        <!------------------------------------------------------------------------------------>
-        <h2>Informations permis A</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatNumeroPermisA">N° de permis</label>
-            <input name="numeroPermisConducteurA" id="inputConstatNumeroPermisA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatCategoriePermisA">Catégorie</label>
-            <input name="categoriePermisConducteurA" id="inputConstatCategoriePermisA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatDateValiditePermisA">Date de validité</label>
-            <input name="dateValiditePermisConducteurA" id="inputConstatDateValiditePermisA" type="date">
-        </div>
-        <!------------------------------------------------------------------------------------>
-        <h2>Informations supplementaires véhicule A (uniquement pour les personnes équipées d'un véhicule connecté)</h2>
-        <div class="formConstatInput">
-            <label for="inputConstatFatigueA">Taux de fatigue</label>
-            <input name="fatigueConducteurA" id="inputConstatFatigueA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatLuminositeExterieureA">Niveau de luminosité extérieure</label>
-            <input name="luminositeExterieureConducteurA" id="inputConstatLuminositeExterieureA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatFrequenceCardiaqueA">Fréquence cardiaque</label>
-            <input name="frequenceCardiaqueConducteurA" id="inputConstatFrequenceCardiaqueA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatVitesseA">Vitesse au moment de l'impact</label>
-            <input name="vitesseConducteurA" id="inputConstatVitesseA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatPressionPneusA">Pression des pneus</label>
-            <input name="pressionPneusConducteurA" id="inputConstatPressionPneusA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatTemperaturePneusA">Température des pneus</label>
-            <input name="temperaturePneusConducteurA" id="inputConstatTemperaturePneusA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatCeintureA">Ceinture de sécurité</label>
-            <input name="ceintureConducteurA" id="inputConstatCeintureA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatZoneImpactA">Zone d'impact</label>
-            <input name="zoneImpactConducteurA" id="inputConstatZoneImpactA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatSeveriteImpactA">Sévérité de l'impact</label>
-            <input name="severiteImpactConducteurA" id="inputConstatSeveriteImpactA" type="text">
-        </div>
-        <div class="formConstatInput">
-            <label for="inputConstatStyleConduiteA">Style de conduite</label>
-            <input name="styleConduiteConducteurA" id="inputConstatStyleConduiteA" type="text">
-        </div>
-        <!------------------------------------------------------------------------------------>
-        <div class="formAjoutVehiculeBouton">
-            <a><button type="submit">Ajouter</button></a>
+            <!------------------------------------------------------------------------------------>
+            <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
+                <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
+                    <a><button type="submit" class="btn btn-primary">valider</button></a>
+                </div>
+            </div>
         </div>
 
     </form>
