@@ -213,7 +213,7 @@
         <!------------------------------------------------------------------------------------>
         <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
             <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
-                <a><button type="submit" class="btn btn-primary">Valider</button></a>
+                <button type="button"  id="AA"  class="btn btn-primary" onclick="popup()">Valider</button>
             </div>
         </div>
     </form>
@@ -382,11 +382,39 @@
             <!------------------------------------------------------------------------------------>
             <div class="row col-12 px-5 py-2 m-2 d-flex justify-content-end">
                 <div class="formAjoutVehiculeBouton col-1 pe-4 me-4">
-                    <a><button type="submit" class="btn btn-primary">Valider</button></a>
+                    <a><button type="button" id="BB" class="btn btn-primary">Valider</button></a>
                 </div>
             </div>
     </form>
     </div>
+
+    <div id="popup" class="popupContainer d-none" style="position: fixed;">
+        <div id="formAjoutVehicule" class="popup border rounded shadow">
+          
+            <div class="titleAjoutVehicule d-flex justify-content-between">
+                <div>
+                   <h1>Partager Le lien</h1>
+                </div>
+                <div>
+                    <button class="btn btn-outline-danger" onclick="hidepopup()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <form class="row">
+                <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
+                    <div class=" p-4 d-flex justify-content-between align-items-center">
+                        <div class="CPL">Copier le lien <button type="button" class="btn btn-secondary " onclick="copierTexte(event)"><i class="bi bi-link-45deg"></i></button></div>
+                        <div class=""> <span class="h5">Via :</span></div>
+                        <div class="CPL"><button type="button" class="btn text-center" onclick="copierTexte(event)"><i class="bi bi-whatsapp"></i> <br> whatsapp</button></div>
+                        <div class="CPL"><button type="button" class="btn text-cente" onclick="copierTexte(event)"><i class="bi bi-envelope-fill"></i> <br> MAIL</button></div>
+                        <div class="CPL"><button type="button" class="btn text-cente" onclick="copierTexte(event)"><i class="bi bi-telephone-fill"></i> <br> SMS</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <a href="listeVehicules.html"><button>Retour</button></a>
     <button onclick="chargerConstat()">Charger infos</button>
     </div>
@@ -432,6 +460,7 @@
     document.getElementById('inputConstatSeveriteImpact'+aoub).setAttribute('disabled','disabled');
     document.getElementById('inputConstatStyleConduite'+aoub).setAttribute('disabled','disabled');
     document.getElementById('inputConstatPJ'+aoub).setAttribute('disabled','disabled');
+    document.getElementById(aoub+aoub).setAttribute('disabled','disabled');
 
 
 var adresse;
@@ -459,6 +488,20 @@ function fill(id){
     document.getElementById('inputConstatCodePostalConducteurB').value = adresse[valeur].properties.postcode;
     }
 
-
+    var textarea_texte = document.getElementById("texte")
+ // Copier le texte
+    copierTexte = (e) => {
+        e.preventDefault()
+            navigator.clipboard.writeText(window.location.href.split('?')[0]+"?AOUB=A").then(() => {
+                alert("Lien copié !")
+            })
+        } 
+    
+   function popup(){
+    document.getElementById('popup').classList.remove('d-none');
+  }
+  function hidepopup(){
+    document.getElementById('popup').classList.add('d-none');
+  }
 </script>
 </html>

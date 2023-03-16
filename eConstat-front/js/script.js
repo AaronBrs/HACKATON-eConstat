@@ -191,6 +191,10 @@ if(document.getElementById("inputAjoutVehiculePermis")!=null){
 if(document.getElementById("inputChoixVehicule")!=null){
     chargerVehicule();
 }
+<<<<<<< Updated upstream
+=======
+//chargerVehicule();
+>>>>>>> Stashed changes
 if(document.getElementById("listeVehicules")!=null){
     afficherVehicules();
 }
