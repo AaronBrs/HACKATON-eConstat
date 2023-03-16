@@ -13,8 +13,8 @@ const permis1 = {numeroPermis:"123456789", categorie:"Permis A", dateValidite:ne
 const permis2 = {numeroPermis:"987654321", categorie:"Permis B", dateValidite:new Date("2028-07-21")};
 //------------------------------------------------------------------------------------------
 const mesVoitures = new Array(voiture1, voiture2, voiture3, voiture4, voiture5, voiture6)
-if(localStorage.getItem('MVH')=='' || localStorage.getItem('MVH')==null){
-    localStorage.setItem('MVH', JSON.stringify(mesVoitures));
+if(sessionStorage.getItem('MVH')=='' || sessionStorage.getItem('MVH')==null){
+    sessionStorage.setItem('MVH', JSON.stringify(mesVoitures));
     console.log(1);
 }
     
@@ -24,7 +24,7 @@ const mesPermis = new Array(permis1, permis2)
 //------------------------------------------------------------------------------------------
 
 function addVh(){
-    var MVH = JSON.parse(localStorage.getItem('MVH'));
+    var MVH = JSON.parse(sessionStorage.getItem('MVH'));
     v.marque=document.getElementById('inputAjoutVehiculeMarque').value;
     v.modele=document.getElementById('inputAjoutVehiculeModele').value;
     v.immat=document.getElementById('inputAjoutVehiculePlaque').value;
@@ -38,7 +38,7 @@ function addVh(){
     }else{
         MVH.push(v);
     }
-    localStorage.setItem('MVH', JSON.stringify(MVH));
+    sessionStorage.setItem('MVH', JSON.stringify(MVH));
   }
 
 
@@ -83,8 +83,10 @@ function chargerPermis(){
 }
 function chargerVehicule(){
     var selectVoiture = document.getElementById("inputChoixVehicule");
-    for(var i = 0; i < JSON.parse(localStorage.getItem('MVH')).length; i++){
-        var voiture = JSON.parse(localStorage.getItem('MVH')).at(i);
+    for(var i = 0; i < JSON.parse(sessionStorage.getItem('MVH')).length; i++){
+        var voiture = JSON.parse(sessionStorage.getItem('MVH')).at(i);
+        console.log(i);
+        console.log(voiture);
         selectVoiture.options.add(new Option(voiture.marque+" "+voiture.modele+" - "+voiture.immat, i));
     }
 }
@@ -99,7 +101,7 @@ function afficherVehicules(){
                     +'<div class="col-2">Assureur</div>'
                     +'<div class="col-2">Contrat</div>'
                     +'</div>';
-    JSON.parse(localStorage.getItem('MVH')).forEach((voiture)=>{
+    JSON.parse(sessionStorage.getItem('MVH')).forEach((voiture)=>{
         listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div><div class="col-2">'+voiture.immat+'</div>'
                     +'<div class="col-2">'+voiture.marque+'</div>'
                     +'<div class="col-2">'+voiture.modele+'</div>'

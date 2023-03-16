@@ -92,9 +92,10 @@
 
         <div id="popup" class="popupContainer d-none">
           <div id="formAjoutVehicule" class="popup border rounded shadow">
+            
               <div class="titleAjoutVehicule d-flex justify-content-between">
                   <div>
-                      <h1>AJOUT VEHICULE</h1>
+                     <h1>Choix du véhicule sinistré</h1>
                   </div>
                   <div>
                       <button class="btn btn-outline-danger" onclick="hidepopup()">
@@ -109,42 +110,15 @@
                           <option value="">Sélectionner un de vos véhicules</option>
                       </select>
                   </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculeMarque">Marque</label>
-                      <input id="inputAjoutVehiculeMarque" type="text"  class="form-control " required>
+                  <div class="absenceVehicule" style="display: none;">Vous n'avez pas déclaré de véhicule. Veuillez l'ajouter avant de déclarer votre sinistre !</div>
+                  <div class="presenceVehicule formChoixVehiculeBouton d-none">
+                    <button type="button">Valider</button>
                   </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculeModele">Modele</label>
-                      <input id="inputAjoutVehiculeModele" type="text"  class="form-control " required>
+                  <div class="absenceVehicule formChoixVehiculeBouton d-none" style="display: none;">
+                      <button type="button">Ajouter</button>
                   </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
-                      <input id="inputAjoutVehiculePlaque" type="text"  class="form-control " required>
-                  </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculeNomAssureur">Nom de l'assureur</label>
-                      <input id="inputAjoutVehiculeNomAssureur" type="text" class="form-control " required>
-                  </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculeNumeroContrat">Numéro de contrat</label>
-                      <input id="inputAjoutVehiculeNumeroContrat" type="text" class="form-control " required>
-                  </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
-                      <label for="inputAjoutVehiculeNumeroCarteVerte">Numéro de carte verte</label>
-                      <input id="inputAjoutVehiculeNumeroCarteVerte" type="text" class="form-control " required>
-                  </div>
-
-                  <div class="formAjoutVehiculeInput form-group col-5 my-3 p-2">
-                      <label for="inputAjoutVehiculePermis">Permis de conduire associé :</label>
-                      <select name="permis" id="inputAjoutVehiculePermis" class="form-control ">
-                          <option value="">Sélectionner un permis</option>
-                      </select>
+                  <div class="formChoixVehiculeBouton d-none">
+                      <button type="button" onclick="checkPresenceVehicule()">Changer vue</button>
                   </div>
 
                   <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
@@ -163,6 +137,7 @@
 
 
   </section>
+  <script src="js/script.js">  </script>
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
