@@ -1,20 +1,17 @@
 const permis1 = {id: 1, numeroPermis:"123456789", categorie:"Permis A", dateValidite:new Date("2031-02-12")};
 const permis2 = {id: 2, numeroPermis:"987654321", categorie:"Permis B", dateValidite:new Date("2028-07-21")};
 //------------------------------------------------------------------------------------------
-const mesPermis = new Array(permis1, permis2)
-//------------------------------------------------------------------------------------------
-const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345", permis:permis1};
-const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"MAIF", numContratAssocie:"55667788", numCarteVerte:"12345", permis:permis1};
-const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"99775533", numCarteVerte:"12345", permis:permis1};
-const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", permis:permis1};
-const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", permis:permis1};
-const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", permis:permis2};
+const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis1};
+const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"MAIF", numContratAssocie:"55667788", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis1};
+const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"99775533", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis1};
+const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis1};
+const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis1};
+const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", dateValidite1:new Date("2021-02-12"), dateValidite2:new Date("2024-12-30"), permis:permis2};
+
 var v = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", permis:permis2};
 //------------------------------------------------------------------------------------------
-const utilisateurConnecte = {nom:"NOMA", prenom:"PrenomA", email:"premiermail@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"7, allée des jardins", pays:"France", dateNaissance:new Date("1998-12-31"), mesPermis: mesPermis, mesVoitures: new Array(voiture1, voiture6)};
-const vehiculeChoisi = voiture6;
+const utilisateurConnecte = {nom:"Chrayah", prenom:"Omar", email:"omar.chrayah@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"7, allée des jardins", pays:"France", dateNaissance:new Date("1998-12-31"), mesPermis: new Array(permis1, permis2), mesVoitures: new Array(voiture1, voiture6)};
 //------------------------------------------------------------------------------------------
-const toutesLesVoitures = new Array(voiture1, voiture6)
 if(sessionStorage.getItem('MVH')=='' || sessionStorage.getItem('MVH')==null){
     sessionStorage.setItem('MVH', JSON.stringify(utilisateurConnecte.mesVoitures));
 }
@@ -147,6 +144,8 @@ function chargerInfosAssureur(){
     document.getElementById("inputConstatNomAssureurA").value = voiture6.nomAssureur;
     document.getElementById("inputConstatNumeroContratA").value = voiture6.numContratAssocie;
     document.getElementById("inputConstatCarteVerteA").value = voiture6.numCarteVerte;
+    document.getElementById("inputConstatDateValiditeA").value = voiture6.dateValidite1.toISOString().substring(0,10);
+    document.getElementById("inputConstatDateValiditeAbis").value = voiture6.dateValidite2.toISOString().substring(0,10);
 }
 function chargerInfosPermis(){
     document.getElementById("inputConstatNumeroPermisA").value = voiture6.permis.numeroPermis;
