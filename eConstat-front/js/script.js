@@ -1,26 +1,23 @@
-const utilisateur1 = {nom:"NOMA", prenom:"PrenomA", email:"premiermail@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"7, allée des jardins", pays:"France", dateNaissance:new Date("1998-12-31")};
-const utilisateur2 = {nom:"NOMB", prenom:"PrenomB", email:"deuxiememail@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"5, allée des jardins", pays:"France", dateNaissance:new Date("1997-12-31")};
-//------------------------------------------------------------------------------------------
-const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"MAIF", numContratAssocie:"55667788", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"99775533", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-var v = {marque:"Teslx", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
-//------------------------------------------------------------------------------------------
 const permis1 = {numeroPermis:"123456789", categorie:"Permis A", dateValidite:new Date("2031-02-12")};
 const permis2 = {numeroPermis:"987654321", categorie:"Permis B", dateValidite:new Date("2028-07-21")};
 //------------------------------------------------------------------------------------------
-const mesVoitures = new Array(voiture1, voiture2, voiture3, voiture4, voiture5, voiture6)
+const mesPermis = new Array(permis1, permis2)
+//------------------------------------------------------------------------------------------
+const utilisateurConnecte = {nom:"NOMA", prenom:"PrenomA", email:"premiermail@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"7, allée des jardins", pays:"France", dateNaissance:new Date("1998-12-31"), mesPermis: mesPermis, mesVoitures: new Array()};
+//const utilisateur2 = {nom:"NOMB", prenom:"PrenomB", email:"deuxiememail@gmail.com", tel:"0123456789", codePostal:"45100", adresse:"5, allée des jardins", pays:"France", dateNaissance:new Date("1997-12-31")};
+//------------------------------------------------------------------------------------------
+const voiture1 = {marque:"Citroen", modele:"DS4", immat:"AB-123-YZ", couleur:"Rouge", nomAssureur:"AXA", numContratAssocie:"11223344", numCarteVerte:"12345", permis:permis1};
+const voiture2 = {marque:"Peugeot", modele:"208", immat:"CD-456-WY", couleur:"Noire", nomAssureur:"MAIF", numContratAssocie:"55667788", numCarteVerte:"12345", permis:permis1};
+const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"Jaune", nomAssureur:"AXA", numContratAssocie:"99775533", numCarteVerte:"12345", permis:permis1};
+const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", permis:permis1};
+const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", permis:permis1};
+const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", permis:permis2};
+var v = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", permis:permis2};
+//------------------------------------------------------------------------------------------
+const mesVoitures = new Array(voiture1, voiture6)
 if(sessionStorage.getItem('MVH')=='' || sessionStorage.getItem('MVH')==null){
     sessionStorage.setItem('MVH', JSON.stringify(mesVoitures));
-    console.log(1);
 }
-    
-
-//------------------------------------------------------------------------------------------
-const mesPermis = new Array(permis1, permis2)
 //------------------------------------------------------------------------------------------
 
 function addVh(){
@@ -31,9 +28,7 @@ function addVh(){
     v.nomAssureur=document.getElementById('inputAjoutVehiculeNomAssureur').value;
     v.numContratAssocie=document.getElementById('inputAjoutVehiculeNumeroContrat').value;
     v.numCarteVerte=document.getElementById('inputAjoutVehiculeNumeroCarteVerte').value;
-    v.Assureur=document.getElementById('inputAjoutVehiculeNomAssureur').value;
-    v.Contrat=document.getElementById('inputAjoutVehiculeNumeroContrat').value;
-    if(v.marque=='' ||  v.modele==''  || v.immat=='' || v.Assureur=='' || v.Contrat=='' || v.numCarteVerte==''){
+    if(v.marque=='' ||  v.modele==''  || v.immat=='' || v.nomAssureur=='' || v.numContratAssocie=='' || v.numCarteVerte==''){
 
     }else{
         MVH.push(v);
@@ -76,8 +71,8 @@ function checkPresenceVehicule(){
 //-------------Chargement des listes déroulantes à partir des données stockées plus haut-------------//
 function chargerPermis(){
     var selectPermis = document.getElementById("inputAjoutVehiculePermis");
-    for(var i = 0; i < mesPermis.length; i++){
-        var permis = mesPermis.at(i);
+    for(var i = 0; i < utilisateurConnecte.mesPermis.length; i++){
+        var permis = utilisateurConnecte.mesPermis.at(i);
         selectPermis.options.add(new Option(permis.categorie+" - "+permis.numeroPermis, i));
     }
 }
@@ -85,8 +80,6 @@ function chargerVehicule(){
     var selectVoiture = document.getElementById("inputChoixVehicule");
     for(var i = 0; i < JSON.parse(sessionStorage.getItem('MVH')).length; i++){
         var voiture = JSON.parse(sessionStorage.getItem('MVH')).at(i);
-        console.log(i);
-        console.log(voiture);
         selectVoiture.options.add(new Option(voiture.marque+" "+voiture.modele+" - "+voiture.immat, i));
     }
 }
@@ -113,7 +106,7 @@ function afficherVehicules(){
 //--------------------Requete sur API pour récupérer le modele et la marque du véhicule par sa plaque d'immatriculation--------------------//
 function chargerInfosAjoutVehicule(){
     var valueInputPlaque = document.getElementById("inputAjoutVehiculePlaque").value;
-    var token="65f2e271752f";
+    var token="72511e8eda9c";
     fetch("http://api.apiplaqueimmatriculation.com/carte-grise?host_name=apiplaqueimmatriculation.com&immatriculation="+valueInputPlaque+"&token="+token+"&format=json",
         {
             method: 'POST',
@@ -130,14 +123,14 @@ function chargerInfosAjoutVehicule(){
 }
 //-------------Chargement des infos pour le constat-------------//
 function chargerInfosConducteur(){
-    document.getElementById("inputConstatNomConducteurA").value = utilisateur1.nom;
-    document.getElementById("inputConstatPrenomConducteurA").value = utilisateur1.prenom;
-    document.getElementById("inputConstatDateNaissanceConducteurA").value = utilisateur1.dateNaissance.toISOString().substring(0,10);
-    document.getElementById("inputConstatAdresseConducteurA").value = utilisateur1.adresse;
-    document.getElementById("inputConstatCodePostalConducteurA").value = utilisateur1.codePostal;
-    document.getElementById("inputConstatPaysConducteurA").value = utilisateur1.pays;
-    document.getElementById("inputConstatNumeroTelephoneConducteurA").value = utilisateur1.tel;
-    document.getElementById("inputConstatEmailConducteurA").value = utilisateur1.email;
+    document.getElementById("inputConstatNomConducteurA").value = utilisateurConnecte.nom;
+    document.getElementById("inputConstatPrenomConducteurA").value = utilisateurConnecte.prenom;
+    document.getElementById("inputConstatDateNaissanceConducteurA").value = utilisateurConnecte.dateNaissance.toISOString().substring(0,10);
+    document.getElementById("inputConstatAdresseConducteurA").value = utilisateurConnecte.adresse;
+    document.getElementById("inputConstatCodePostalConducteurA").value = utilisateurConnecte.codePostal;
+    document.getElementById("inputConstatPaysConducteurA").value = utilisateurConnecte.pays;
+    document.getElementById("inputConstatNumeroTelephoneConducteurA").value = utilisateurConnecte.tel;
+    document.getElementById("inputConstatEmailConducteurA").value = utilisateurConnecte.email;
 }
 function chargerInfosVehicule(){
     document.getElementById("inputConstatModeleVehiculeA").value = voiture6.modele;
@@ -150,9 +143,9 @@ function chargerInfosAssureur(){
     document.getElementById("inputConstatCarteVerteA").value = voiture6.numCarteVerte;
 }
 function chargerInfosPermis(){
-    document.getElementById("inputConstatNumeroPermisA").value = permis1.numeroPermis;
-    document.getElementById("inputConstatCategoriePermisA").value = permis1.categorie;
-    document.getElementById("inputConstatDateValiditePermisA").value = permis1.dateValidite.toISOString().substring(0,10);
+    document.getElementById("inputConstatNumeroPermisA").value = voiture6.permis.numeroPermis;
+    document.getElementById("inputConstatCategoriePermisA").value = voiture6.permis.categorie;
+    document.getElementById("inputConstatDateValiditePermisA").value = voiture6.permis.dateValidite.toISOString().substring(0,10);
 }
 function chargerInfosSupplementaires(){
     //Appel de la fake API créée sur Mockoon
@@ -163,9 +156,18 @@ function chargerInfosSupplementaires(){
         }
         })
         .then((response) => response.json())
-        .then((response) => console.log(response))
-    //document.getElementById("inputAjoutVehiculeMarque").value = response.data.marque;
-    ;
+        .then((response) => {
+            document.getElementById("inputConstatFatigueA").value = response.fatigue;
+            document.getElementById("inputConstatLuminositeExterieureA").value = response.luminositeExt;
+            document.getElementById("inputConstatFrequenceCardiaqueA").value = response.freqCard;
+            document.getElementById("inputConstatVitesseA").value = response.vitesseMomentImpact;
+            document.getElementById("inputConstatPressionPneusA").value = response.pressionPneus;
+            document.getElementById("inputConstatTemperaturePneusA").value = response.temperaturePneus;
+            document.getElementById("inputConstatCeintureA").value = response.ceintureConducteur;
+            document.getElementById("inputConstatZoneImpactA").value = response.zoneImpact;
+            document.getElementById("inputConstatSeveriteImpactA").value = response.severiteImpact;
+            document.getElementById("inputConstatStyleConduiteA").value = response.styleConduite;
+        });
 }
 function chargerConstat(){
     chargerInfosConducteur();
@@ -177,18 +179,17 @@ function chargerConstat(){
 
 //---------Chargement des données à l'affichage de certaines pages---------//
 if(document.getElementById("inputAjoutVehiculePermis")!=null){
-    console.log("AjoutVehicule");
     chargerPermis();
 }
 if(document.getElementById("inputChoixVehicule")!=null){
-    console.log("Presinistre");
     chargerVehicule();
 }
 if(document.getElementById("listeVehicules")!=null){
-    console.log("ListeVehicule");
     afficherVehicules();
 }
 if(document.getElementById("formConstat")!=null){
-    console.log("Constat");
-    chargerConstat();
+    //chargerConstat();
+}
+if(document.getElementById("pageProfil")!=null){
+    //chargerInfosProfil();
 }
