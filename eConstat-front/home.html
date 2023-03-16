@@ -91,9 +91,9 @@
         </div>
 
         <div id="popup" class="popupContainer d-none">
-          <div id="formAjoutVehicule" class="popup border rounded shadow">
+          <div id="formChoixVehicule" class="popup border rounded shadow">
             
-              <div class="titleAjoutVehicule d-flex justify-content-between">
+              <div class="titleChoixVehicule d-flex justify-content-between">
                   <div>
                      <h1>Choix du véhicule sinistré</h1>
                   </div>
@@ -104,7 +104,7 @@
                   </div>
               </div>
               <form class="row">
-                  <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
+                  <div class="formChoixVehicule form-group col-12 my-3 p-2">
                       <label for="inputChoixVehicule">Véhicule :</label>
                       <select name="vehicules" id="inputChoixVehicule"class="form-control " required>
                           <option value="">Sélectionner un de vos véhicules</option>
@@ -121,7 +121,7 @@
                       <button type="button" onclick="checkPresenceVehicule()">Changer vue</button>
                   </div>
 
-                  <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
+                  <div class="formChoixVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
                       <button type="submit" class="btn btn-primary" onclick="addVh()">Ajouter</button>
                   </div>
               </form>
