@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/font-css.css"> 
-       <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
 </head>
@@ -59,6 +59,101 @@
                 <span class="tooltip">Compte</span>
             </div>
         </div>
+        <div class="main px-5">
+          <div class="histo row p-5">
+            <div class="col-12 d-flex justify-content-between pe-5">
+             <div><h2>Historique</h2></div>
+             <div>
+              <button class="btn btn-success" onclick="popup()">+ Declarer un sinistre</button>
+             </div> 
+            </div>
+            <div class="col-12 row bg-bl p-3 border text-white text-center  border rounded">
+              <div class="col-3 h6 m-0">ASSUREUR</div>
+              <div class="col-3 h6 m-0">VEHICULE</div>
+              <div class="col-3 h6 m-0">ETAT</div>
+              <div class="col-3 h6 m-0">ACTION</div>
+            </div>
+            <div class="col-12 bg-white row text-center  border rounded">
+              <div class="col-3 p-3"><span>AXA Auto</span></div>
+              <div class="col-3 p-3"><span>Ford</span></div>
+              <div class="col-3 p-3"><span class="bg-success text-white p-2 rounded">Valide</span></div>
+              <div class="col-3 p-2"><button type="button" class="bg-secondary text-white m-0 p-2 btn btn-sm">Consulter <i class="ml-2 bi bi-eye-fill"></i> </button></div>
+            </div>
+            <div class="col-12 bg-white row text-center  border rounded">
+              <div class="col-3 p-3"><span>MAIF</span></div>
+              <div class="col-3 p-3"><span>Renault</span></div>
+              <div class="col-3 p-3"><span class="bg-warning text-white p-2 rounded">EnCours</span></div>
+              <div class="col-3 p-2"><button type="button" class="bg-secondary text-white m-0 p-2 btn btn-sm">Consulter <i class="ml-2 bi bi-eye-fill"></i> </button></div>
+            </div>
+
+        </div>
+
+        </div>
+
+        <div id="popup" class="popupContainer d-none">
+          <div id="formAjoutVehicule" class="popup border rounded shadow">
+              <div class="titleAjoutVehicule d-flex justify-content-between">
+                  <div>
+                      <h1>AJOUT VEHICULE</h1>
+                  </div>
+                  <div>
+                      <button class="btn btn-outline-danger" onclick="hidepopup()">
+                          <i class="bi bi-x-lg"></i>
+                      </button>
+                  </div>
+              </div>
+              <form class="row">
+                  <div class="formAjoutVehiculeInput form-group col-12 my-3 p-2">
+                      <label for="inputChoixVehicule">Véhicule :</label>
+                      <select name="vehicules" id="inputChoixVehicule"class="form-control " required>
+                          <option value="">Sélectionner un de vos véhicules</option>
+                      </select>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculeMarque">Marque</label>
+                      <input id="inputAjoutVehiculeMarque" type="text"  class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculeModele">Modele</label>
+                      <input id="inputAjoutVehiculeModele" type="text"  class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculePlaque">Plaque d'immatriculation</label>
+                      <input id="inputAjoutVehiculePlaque" type="text"  class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculeNomAssureur">Nom de l'assureur</label>
+                      <input id="inputAjoutVehiculeNomAssureur" type="text" class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculeNumeroContrat">Numéro de contrat</label>
+                      <input id="inputAjoutVehiculeNumeroContrat" type="text" class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-4 my-3 p-2">
+                      <label for="inputAjoutVehiculeNumeroCarteVerte">Numéro de carte verte</label>
+                      <input id="inputAjoutVehiculeNumeroCarteVerte" type="text" class="form-control " required>
+                  </div>
+
+                  <div class="formAjoutVehiculeInput form-group col-5 my-3 p-2">
+                      <label for="inputAjoutVehiculePermis">Permis de conduire associé :</label>
+                      <select name="permis" id="inputAjoutVehiculePermis" class="form-control ">
+                          <option value="">Sélectionner un permis</option>
+                      </select>
+                  </div>
+
+                  <div class="formAjoutVehiculeBouton  form-group col-12 flex-row-reverse d-flex px-5 ">
+                      <button type="submit" class="btn btn-primary" onclick="addVh()">Ajouter</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+
 
 
         
@@ -78,11 +173,12 @@
     menuBtnChange();//calling the function(optional)
   });
 
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
-  });
-
+  function popup(){
+    document.getElementById('popup').classList.remove('d-none')
+  }
+  function hidepopup(){
+    document.getElementById('popup').classList.add('d-none')
+  }
   // following are the code to change sidebar button(optional)
   function menuBtnChange() {
    if(sidebar.classList.contains("open")){

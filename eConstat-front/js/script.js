@@ -7,16 +7,48 @@ const voiture3 = {marque:"Ford", modele:"Mustang", immat:"EF-789-UV", couleur:"J
 const voiture4 = {marque:"Renault", modele:"Scenic", immat:"GH-987-ST", couleur:"Marron", nomAssureur:"MAIF", numContratAssocie:"55443399", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
 const voiture5 = {marque:"Volkswagen", modele:"Golf", immat:"IJ-654-QR", couleur:"Grise", nomAssureur:"ALLIANZ", numContratAssocie:"44668811", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
 const voiture6 = {marque:"Tesla", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
+var v = {marque:"Teslx", modele:"Model S", immat:"KL-321-OP", couleur:"Blanche", nomAssureur:"CIC", numContratAssocie:"66881122", numCarteVerte:"12345", Assureur:"AXA Auto",Contrat:"122SDE17446"};
 //------------------------------------------------------------------------------------------
 const permis1 = {numeroPermis:"123456789", categorie:"Permis A", dateValidite:new Date("2031-02-12")};
 const permis2 = {numeroPermis:"987654321", categorie:"Permis B", dateValidite:new Date("2028-07-21")};
 //------------------------------------------------------------------------------------------
 const mesVoitures = new Array(voiture1, voiture2, voiture3, voiture4, voiture5, voiture6)
+if(localStorage.getItem('MVH')=='' || localStorage.getItem('MVH')==null){
+    localStorage.setItem('MVH', JSON.stringify(mesVoitures));
+    console.log(1);
+}
+    
+
 //------------------------------------------------------------------------------------------
 const mesPermis = new Array(permis1, permis2)
 //------------------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 //----Changement de vue sur la connexion----//
+=======
+function addVh(){
+    var MVH = JSON.parse(localStorage.getItem('MVH'));
+    v.marque=document.getElementById('inputAjoutVehiculeMarque').value;
+    v.modele=document.getElementById('inputAjoutVehiculeModele').value;
+    v.immat=document.getElementById('inputAjoutVehiculePlaque').value;
+    v.nomAssureur=document.getElementById('inputAjoutVehiculeNomAssureur').value;
+    v.numContratAssocie=document.getElementById('inputAjoutVehiculeNumeroContrat').value;
+    v.numCarteVerte=document.getElementById('inputAjoutVehiculeNumeroCarteVerte').value;
+    v.Assureur=document.getElementById('inputAjoutVehiculeNomAssureur').value;
+    v.Contrat=document.getElementById('inputAjoutVehiculeNumeroContrat').value;
+    if(v.marque=='' ||  v.modele==''  || v.immat=='' || v.Assureur=='' || v.Contrat=='' || v.numCarteVerte==''){
+
+    }else{
+        MVH.push(v);
+    }
+    localStorage.setItem('MVH', JSON.stringify(MVH));
+  }
+
+
+
+
+//------------------------------------------------------------------------------------------
+>>>>>>> Stashed changes
 function afficherFormulaire(){
     const formulaireConnexion = document.getElementById("formConnexion");
     const formulaireInscription = document.getElementById("formInscription");
@@ -55,8 +87,8 @@ function chargerPermis(){
 }
 function chargerVehicule(){
     var selectVoiture = document.getElementById("inputChoixVehicule");
-    for(var i = 0; i < mesVoitures.length; i++){
-        var voiture = mesVoitures.at(i);
+    for(var i = 0; i < JSON.parse(localStorage.getItem('MVH')).length; i++){
+        var voiture = JSON.parse(localStorage.getItem('MVH')).at(i);
         selectVoiture.options.add(new Option(voiture.marque+" "+voiture.modele+" - "+voiture.immat, i));
     }
 }
@@ -71,9 +103,14 @@ function afficherVehicules(){
                     +'<div class="col-2">Assureur</div>'
                     +'<div class="col-2">Contrat</div>'
                     +'</div>';
+<<<<<<< Updated upstream
     mesVoitures.forEach((voiture)=>{
         listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div>'
                     +'<div class="col-2">'+voiture.immat+'</div>'
+=======
+    JSON.parse(localStorage.getItem('MVH')).forEach((voiture)=>{
+        listeVehicules.innerHTML += '<div class="row m-0 text-center p-3 "><div class="col-2"><i class="bi bi-car-front h3"></i></div><div class="col-2">'+voiture.immat+'</div>'
+>>>>>>> Stashed changes
                     +'<div class="col-2">'+voiture.marque+'</div>'
                     +'<div class="col-2">'+voiture.modele+'</div>'
                     +'<div class="col-2">'+voiture.nomAssureur+'</div>'
