@@ -172,6 +172,7 @@ function chargerInfosSupplementaires() {
             document.getElementById("inputConstatZoneImpactA").value = response.zoneImpact;
             document.getElementById("inputConstatSeveriteImpactA").value = response.severiteImpact;
             document.getElementById("inputConstatStyleConduiteA").value = response.styleConduite;
+            document.getElementById("inputConstatLieu").value = response.localisation;
         });
 }
 function chargerConstat(){
