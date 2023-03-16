@@ -191,7 +191,6 @@ if(document.getElementById("inputAjoutVehiculePermis")!=null){
 if(document.getElementById("inputChoixVehicule")!=null){
     chargerVehicule();
 }
-chargerVehicule();
 if(document.getElementById("listeVehicules")!=null){
     afficherVehicules();
 }
