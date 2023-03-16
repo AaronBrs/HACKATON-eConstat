@@ -182,6 +182,7 @@ function chargerConstat(){
     chargerInfosPermis();
     chargerInfosSupplementaires();
 }
+chargerConstat();
 
 //---------Chargement des données à l'affichage de certaines pages---------//
 if(document.getElementById("inputAjoutVehiculePermis")!=null){
