@@ -182,7 +182,7 @@ function chargerConstat(){
     chargerInfosPermis();
     chargerInfosSupplementaires();
 }
-chargerConstat();
+//
 
 //---------Chargement des données à l'affichage de certaines pages---------//
 if(document.getElementById("inputAjoutVehiculePermis")!=null){
@@ -191,6 +191,7 @@ if(document.getElementById("inputAjoutVehiculePermis")!=null){
 if(document.getElementById("inputChoixVehicule")!=null){
     chargerVehicule();
 }
+chargerVehicule();
 if(document.getElementById("listeVehicules")!=null){
     afficherVehicules();
 }
